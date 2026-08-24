@@ -435,7 +435,7 @@ Vida=100;
 				//llama a funcion para poner imagen de monstruo y texto
 				NuevoMonstruo();
                 
-                document.getElementById("tuimagen").src="Prueba1.png";
+                document.getElementById("tuimagen").src="./prueba1.png";
                 
 		
         document.getElementById("vida").innerHTML=Vida;
@@ -693,13 +693,13 @@ Vida=100;
 		 MontruoAleatorio = Math.floor(Math.random()*3); //Numero Aleatorio para el montruo
 		 console.log(MontruoAleatorio);
 		 if (MontruoAleatorio==1){
-			document.getElementById("imagenenemigo").src="Prueba3.png";
+			document.getElementById("imagenenemigo").src="./prueba3.png";
 		 }
 		 else if (MontruoAleatorio==0){
-			document.getElementById("imagenenemigo").src="Prueba4.png";
+			document.getElementById("imagenenemigo").src="./prueba4.png";
 		 }
 		 else if (MontruoAleatorio==2){
-			document.getElementById("imagenenemigo").src="Prueba5.png";
+			document.getElementById("imagenenemigo").src="./prueba5.png";
 		 }
 			if (Victorias>=1 ){
 				document.getElementById("info").innerHTML="Has derrotado al monstruo y ha venido uno nuevo";
