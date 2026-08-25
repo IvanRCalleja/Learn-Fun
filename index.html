@@ -61,8 +61,18 @@
             color:lightgreen;
             font-size: 30px;
         }
+		 #tuvida2{
+            color:lightgreen;
+            font-size: 30px;
+        }
 		#info{
 		background-color:white;
+		}
+		#infoarriba1{
+		background-color:gray;
+		}
+		#infoarriba2{
+		background-color:dark-gray;
 		}
         #gameplay{
             margin-top: 30px;
@@ -76,6 +86,12 @@
         #gameplaytu{
             display: flex;
         }
+		#gameplayinfomonstruos{
+		 display: flex;
+		}
+		#gameplayinfooro{
+		 display: flex;
+		}
         #gameplayvidas{
             display: flex;
             margin-bottom: -30px;
@@ -127,29 +143,39 @@
            margin-left: 13%;
 		   font-family:"Lucida Console", "Courier New", monospace;
         }
-		 #piepagina3{
-            color: aliceblue;
+		.ObjetosDes{
+		    color: aliceblue;
            margin-top: 20px;
            margin-bottom: 10px;
 			font-size:20px;
 		   font-family:"Lucida Console", "Courier New", monospace;
-        }
+		}
 		#numerovictorias{
 		color:white;
-		margin-left:-5%;
+	
 		}
 		#textovictorias{
 		color:white;
 		}
 		#numeroOro{
 		color:yellow;
-		margin-left:-5%;
+
+		}
+		#numeroOro2{
+		color:yellow;
+
 		}
 		#textoOro{
 		color:yellow;
 		}
 		#textoeventosaventura{
 		color:white;
+		}
+		#gameplayinformacion{
+		background-color:brown;
+		}
+		#abajo2{
+		display:flex;
 		}
         .respuestas{
            background-image: url("Fondo2.png");
@@ -166,8 +192,9 @@
         }
 		 .Objetos{
            background-image: url("Fondo3.png");
-            width: 210px;
-            height: 75px;
+            width: 67;
+			height: 100px;
+        
             font-size: 30px;
 			font-family:"Lucida Console", "Courier New", monospace;
 			border-radius: 20px 20px 20px 20px;
@@ -231,10 +258,14 @@
     </div>
     <div id="gameplay">
         <div id="gameplayvidas">
+			<div id="gameplayinfomonstruos">
 			<h2 id="textovictorias">Montruos derrotados: </h2>
 			<h2 id="numerovictorias">0</h2>
+			</div>
+			<div id="gameplayinfooro">
 			<h2 id="textoOro">Oro: </h2>
 			<h2 id="numeroOro">0</h2>
+			</div>
             <div id="gameplayrival">
                 <h2 id="textovidae">S3ctor, Vida enemigo:</h2>
                 <h2 id="vida">100</h2>
@@ -249,7 +280,11 @@
                 <img id="tuimagen" src="">  
         </div>
         <img id="imagenenemigo" src="">
-        <h2 id="info">Acierta las preguntas para hacer daño</h2>
+		<div id="gameplayinformacion">
+        <h2 id="infoarriba2">---</h2>
+		<h2 id="infoarriba1">---</h2>
+		<h2 id="info">Acierta las preguntas para hacer daño</h2>
+		</div>
         <div id="Principal">
         </div>
         <div id="abajo">
@@ -260,11 +295,42 @@
             <!--<input type="text" name="Respuesta" id="Respuesta" placeholder="Respuesta">
             <button id="Enter" onclick="Enter()">COMPROBAR</button>-->
         </div>
+		<h7 class="ObjetosDes">Objetos.</h7>
 		<div id="abajo2">
+		
 			<div id="piepagina3">
-                    <h7 >Regeneras 10 de salud a cambio de 300 de oro.</h7>
+			
+				<div>
+					<button id="Pocion" class="Objetos" onclick="Pocion()">Poción 300 Oro</button>
+				</div>
+				<div>
+					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
+				</div>
             </div>
-            <button id="Pocion" class="Objetos" onclick="Pocion()">Poción 300 Oro</button>
+            <div id="divobjeto2">
+				<div>
+					<button id="Pocion" class="Objetos" onclick="Pocion()">Furia 200 Oro</button>
+				</div>
+				<div>
+					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
+				</div>
+			</div>
+			 <div id="divobjeto3">
+				<div>
+					<button id="Pocion" class="Objetos" onclick="Pocion()">Ladrón 250 Oro</button>
+				</div>
+				<div>
+					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
+				</div>
+			</div>
+			 <div id="divobjeto4">
+				<div>
+					<button id="Pocion" class="Objetos" onclick="Pocion()">Espada del rey, 1500 Oro</button>
+				</div>
+				<div>
+					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
+				</div>
+			</div>
             <!--<input type="text" name="Respuesta" id="Respuesta" placeholder="Respuesta">
             <button id="Enter" onclick="Enter()">COMPROBAR</button>-->
         </div>
@@ -313,6 +379,7 @@
         Dialogo=0;
 		Oro=0;
 		AtaqueRival=10;
+		MiAtaque=10;
         
         //Preguntas de prueba
         const id01 = ["¿Cuanto es 6x6?","36","30","32","16",""]; //Pregunta con id 01
@@ -435,7 +502,7 @@ Vida=100;
 				//llama a funcion para poner imagen de monstruo y texto
 				NuevoMonstruo();
                 
-                document.getElementById("tuimagen").src="./prueba1.png";
+                document.getElementById("tuimagen").src="Prueba1.png";
                 
 		
         document.getElementById("vida").innerHTML=Vida;
@@ -535,9 +602,13 @@ Vida=100;
             
             document.getElementById("vida").innerHTML=Vida;
 //Cambio de lugar
-			if(Victorias>=3){
+			if(Victorias==3){
 			console.log("cambio de entorno");
 				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoLava.png')";
+			
+			}else if(Victorias==6){
+			console.log("cambio de entorno");
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCementerio.png')";
 			
 			}
             
@@ -553,7 +624,9 @@ Vida=100;
 			if(Vida<=10){
                Victoria();
             }else{
-                document.getElementById("info").innerHTML="Está bien, Has hecho +10 de daño al rival";
+               Xinfo="Está bien, Has hecho +10 de daño al rival";
+			ActualizarInfo(Xinfo);
+			GolpeoOro();
                 console.log("Está bien, Has hecho +10 de daño al rival");
 				Vida=Vida-10;
                 recargar();
@@ -561,7 +634,8 @@ Vida=100;
             }
             else{
                 console.log(document.getElementById("respuesta1").innerHTML);
-                document.getElementById("info").innerHTML="Está mal";
+                  Xinfo="Está mal";
+				ActualizarInfo(Xinfo);
                 console.log("Está mal");
                 TuVida=TuVida-AtaqueRival;
                 document.getElementById("tuvida").innerHTML=TuVida;
@@ -589,7 +663,9 @@ Vida=100;
 			if(Vida<=10){
                 Victoria();
             }else{
-                document.getElementById("info").innerHTML="Está bien, Has hecho +10 de daño al rival";
+                Xinfo="Está bien, Has hecho +10 de daño al rival";
+			ActualizarInfo(Xinfo);
+			GolpeoOro();
                 console.log("Está bien, Has hecho +10 de daño al rival");
 				Vida=Vida-10;
                 recargar();
@@ -597,7 +673,8 @@ Vida=100;
             }
             else{
                 console.log(document.getElementById("respuesta2").innerHTML);
-                document.getElementById("info").innerHTML="Está mal";
+                  Xinfo="Está mal";
+				ActualizarInfo(Xinfo);
                 console.log("Está mal");
                 TuVida=TuVida-AtaqueRival;
                 document.getElementById("tuvida").innerHTML=TuVida;
@@ -616,15 +693,18 @@ Vida=100;
 			if(Vida<=10){
                 Victoria();
             }else{
-                document.getElementById("info").innerHTML="Está bien, Has hecho +10 de daño al rival";
+              Xinfo="Está bien, Has hecho +10 de daño al rival";
+			ActualizarInfo(Xinfo);
                 console.log("Está bien, Has hecho +10 de daño al rival");
+				GolpeoOro();
 				Vida=Vida-10;
                 recargar();
 				}
             }
             else{
                 console.log(document.getElementById("respuesta3").innerHTML);
-                document.getElementById("info").innerHTML="Está mal";
+                 Xinfo="Está mal";
+				ActualizarInfo(Xinfo);
                 console.log("Está mal");
                 TuVida=TuVida-AtaqueRival;
                 document.getElementById("tuvida").innerHTML=TuVida;
@@ -643,15 +723,18 @@ Vida=100;
 				if(Vida<=10){
                 Victoria();
 				}else{
-            document.getElementById("info").innerHTML="Está bien, Has hecho +10 de daño al rival";
+            Xinfo="Está bien, Has hecho +10 de daño al rival";
+			ActualizarInfo(Xinfo);
                 console.log("Está bien, Has hecho +10 de daño al rival");
 				Vida=Vida-10;
+				GolpeoOro();
                 recargar();
 				}
             }
             else{
                 console.log(document.getElementById("respuesta4").innerHTML);
-                document.getElementById("info").innerHTML="Está mal";
+                Xinfo="Está mal";
+				ActualizarInfo(Xinfo);
                 console.log("Está mal");
                 TuVida=TuVida-AtaqueRival;
                 document.getElementById("tuvida").innerHTML=TuVida;
@@ -693,19 +776,21 @@ Vida=100;
 		 MontruoAleatorio = Math.floor(Math.random()*3); //Numero Aleatorio para el montruo
 		 console.log(MontruoAleatorio);
 		 if (MontruoAleatorio==1){
-			document.getElementById("imagenenemigo").src="./prueba3.png";
+			document.getElementById("imagenenemigo").src="Prueba3.png";
 		 }
 		 else if (MontruoAleatorio==0){
-			document.getElementById("imagenenemigo").src="./prueba4.png";
+			document.getElementById("imagenenemigo").src="Prueba4.png";
 		 }
 		 else if (MontruoAleatorio==2){
-			document.getElementById("imagenenemigo").src="./prueba5.png";
+			document.getElementById("imagenenemigo").src="Prueba5.png";
 		 }
 			if (Victorias>=1 ){
-				document.getElementById("info").innerHTML="Has derrotado al monstruo y ha venido uno nuevo";
+				Xinfo="Has derrotado al monstruo y ha venido uno nuevo";
+				ActualizarInfo(Xinfo);
 			} else {
 			
-			document.getElementById("info").innerHTML="Ha aparecido un monstruo";
+			Xinfo="Ha aparecido un monstruo";
+			ActualizarInfo(Xinfo);
 			}
 		
 		}
@@ -717,7 +802,8 @@ Vida=100;
 				document.getElementById("tuvida").innerHTML=TuVida;
 				document.getElementById("numeroOro2").innerHTML=Oro;
 				document.getElementById("tuvida2").innerHTML=TuVida;
-				document.getElementById("info").innerHTML="Has comprado Poción +10 Vida, -300 oro.";
+				Xinfo="Has comprado Poción +10 Vida, -300 oro.";
+				ActualizarInfo(Xinfo);
 				
 			
 			}
@@ -749,6 +835,15 @@ Vida=100;
             document.getElementById("gameplayPadre").style.display="flex";
             document.getElementById("menuMapa").hidden=true;
 			recargar();
+		}
+		function ActualizarInfo(Xinfo){
+			document.getElementById("infoarriba2").innerHTML=document.getElementById("infoarriba1").innerHTML;
+			document.getElementById("infoarriba1").innerHTML=document.getElementById("info").innerHTML;
+			document.getElementById("info").innerHTML=Xinfo;
+		}
+		function GolpeoOro(){
+		Oro=Oro+1;
+		document.getElementById("numeroOro").innerHTML=Oro;
 		}
 
     </script>
