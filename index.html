@@ -129,6 +129,7 @@
         }
         #Principal{
             background-color: aliceblue;
+			font-size:20px;
         }
         #piepagina{
             color: aliceblue;
@@ -204,6 +205,24 @@
 			border-color:white;
 			background-image: url("Fondo3_1.png");
         }
+		#Pocion{
+		 background-image: url("Fondo3.png");
+		}
+		#Ladron{
+		 background-image: url("Fondo4.png");
+		}
+		#Pocion:hover{
+		background-image: url("Fondo3_1.png");
+		}
+		#Ladron:hover{
+		background-image: url("Fondo4_1.png");
+		}
+		#Furia{
+		 background-image: url("Fondo5.png");
+		}
+		#Furia:hover{
+		background-image: url("Fondo5_1.png");
+		}
     </style>
 </head>
 <body>
@@ -309,23 +328,23 @@
             </div>
             <div id="divobjeto2">
 				<div>
-					<button id="Pocion" class="Objetos" onclick="Pocion()">Furia 200 Oro</button>
+					<button id="Furia" class="Objetos" onclick="Furia()">Furia 200 Oro</button>
 				</div>
 				<div>
-					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
+					<h7 class="ObjetosDes">Aumentas el daño de tu ataque durante 10 turnos, a cambio de 200 de oro.</h7>
 				</div>
 			</div>
 			 <div id="divobjeto3">
 				<div>
-					<button id="Pocion" class="Objetos" onclick="Pocion()">Ladrón 250 Oro</button>
+					<button id="Ladron" class="Objetos" onclick="Ladron()">Ladrón 250 Oro</button>
 				</div>
 				<div>
-					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
+					<h7 class="ObjetosDes">Aumentas el oro recibido durante 10 turnos a cambio de 250 de oro.</h7>
 				</div>
 			</div>
 			 <div id="divobjeto4">
 				<div>
-					<button id="Pocion" class="Objetos" onclick="Pocion()">Espada del rey, 1500 Oro</button>
+					<button id="Ladron" class="Objetos" onclick="Pocion()">Espada del rey, 1500 Oro</button>
 				</div>
 				<div>
 					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
@@ -380,7 +399,10 @@
 		Oro=0;
 		AtaqueRival=10;
 		MiAtaque=10;
-        
+        CuentaLadron=0;
+		PotenciadorMiAtaque=0;
+		CuentaPotenciadorMiAtaque=0;
+		
         //Preguntas de prueba
         const id01 = ["¿Cuanto es 6x6?","36","30","32","16",""]; //Pregunta con id 01
         const id02 = ["¿En que año acabó la guerra fria?","1991","1990","1989","1971",""]; //Pregunta con id 02
@@ -433,7 +455,7 @@
 		const id2Mat13 = ["¿Cuanto es 60+42?","102","92","82","104",""]; //Pregunta con id 01
 	
 	
-        const  IdesMatTema2 = [id1Mat1,id1Mat2,id1Mat3,id1Mat4,id1Mat5,id1Mat6,id1Mat7,id1Mat8,id1Mat9,id1Mat10,id1Mat11,id1Mat12]; //Id de las preguntas, Arrays donde se guardan los Arrays
+        const  IdesMatTema2 = [id1Mat1,id1Mat2,id1Mat3,id1Mat4,id1Mat5,id1Mat6,id1Mat7,id1Mat8,id1Mat9,id1Mat10,id1Mat11,id1Mat12,id1Mat13]; //Id de las preguntas, Arrays donde se guardan los Arrays
 		
 				//Preguntas Historia Nivel 2, Guerra fria
         const id20His1 = ["¿En que año acabó la guerra fria?","1991","1990","1989","1971",""]; //Pregunta con id 01
@@ -628,7 +650,7 @@ Vida=100;
 			ActualizarInfo(Xinfo);
 			GolpeoOro();
                 console.log("Está bien, Has hecho +10 de daño al rival");
-				Vida=Vida-10;
+				Ataque();
                 recargar();
 				}
             }
@@ -667,7 +689,7 @@ Vida=100;
 			ActualizarInfo(Xinfo);
 			GolpeoOro();
                 console.log("Está bien, Has hecho +10 de daño al rival");
-				Vida=Vida-10;
+				Ataque();
                 recargar();
 				}
             }
@@ -697,7 +719,7 @@ Vida=100;
 			ActualizarInfo(Xinfo);
                 console.log("Está bien, Has hecho +10 de daño al rival");
 				GolpeoOro();
-				Vida=Vida-10;
+				Ataque();
                 recargar();
 				}
             }
@@ -726,7 +748,7 @@ Vida=100;
             Xinfo="Está bien, Has hecho +10 de daño al rival";
 			ActualizarInfo(Xinfo);
                 console.log("Está bien, Has hecho +10 de daño al rival");
-				Vida=Vida-10;
+				Ataque();
 				GolpeoOro();
                 recargar();
 				}
@@ -751,9 +773,15 @@ Vida=100;
 		function Victoria(){
 		
 			
-			Vida=100;
+			
 			Victorias=Victorias+1;
-			Oro=Oro+100;
+			
+			if(CuentaLadron>=1){
+				Oro=Oro+150;
+				CuentaLadron=CuentaLadron-1;
+			}else{
+				Oro=Oro+100;
+			}
 			document.getElementById("numerovictorias").innerHTML=Victorias;
 			document.getElementById("numeroOro").innerHTML=Oro;
 			NuevoMonstruo();
@@ -765,6 +793,9 @@ Vida=100;
 			EntreNivel();
 			}else if(Victorias==6){
 			EntreNivel();
+			}else if(Victorias==10){
+			document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCastillo.png')";
+			EntreNivel();
 			}else{
 			recargar();
 			}
@@ -772,8 +803,8 @@ Vida=100;
 		
 		}
 		function NuevoMonstruo(){
-		
-		 MontruoAleatorio = Math.floor(Math.random()*3); //Numero Aleatorio para el montruo
+			Vida=100;
+		 MontruoAleatorio = Math.floor(Math.random()*4); //Numero Aleatorio para el montruo
 		 console.log(MontruoAleatorio);
 		 if (MontruoAleatorio==1){
 			document.getElementById("imagenenemigo").src="./prueba3.png";
@@ -783,6 +814,10 @@ Vida=100;
 		 }
 		 else if (MontruoAleatorio==2){
 			document.getElementById("imagenenemigo").src="./prueba5.png";
+		 }
+		  else if (MontruoAleatorio==3){
+			document.getElementById("imagenenemigo").src="./Enemigo6.png";
+			Vida=150;
 		 }
 			if (Victorias>=1 ){
 				Xinfo="Has derrotado al monstruo y ha venido uno nuevo";
@@ -841,9 +876,58 @@ Vida=100;
 			document.getElementById("infoarriba1").innerHTML=document.getElementById("info").innerHTML;
 			document.getElementById("info").innerHTML=Xinfo;
 		}
+		
+		//Función del oro recibido
 		function GolpeoOro(){
-		Oro=Oro+1;
-		document.getElementById("numeroOro").innerHTML=Oro;
+		if(CuentaLadron>=1){
+			Oro=Oro+3;
+			CuentaLadron=CuentaLadron-1;
+		}else{
+			Oro=Oro+1;
+		}
+			document.getElementById("numeroOro").innerHTML=Oro;
+		}
+		
+		//Función Objeto Ladrón
+		function Ladron(){
+		if (Oro>=250){
+				CuentaLadron=10;
+				Oro=Oro-250;
+				document.getElementById("numeroOro").innerHTML=Oro;
+				document.getElementById("numeroOro2").innerHTML=Oro;
+				Xinfo="Has comprado Ladrón + Probabilidad de ganar oro, -250 oro.";
+				ActualizarInfo(Xinfo);		
+			}else{
+				Xinfo="Necesitas 250 oro para comprar Ladrón.";
+				ActualizarInfo(Xinfo);	
+			}
+		}
+		
+		//Función de los ataques a los enemigos
+		function Ataque(){
+			if(CuentaPotenciadorMiAtaque>=1){
+				Vida=Vida-MiAtaque*PotenciadorMiAtaque;
+				CuentaPotenciadorMiAtaque=CuentaPotenciadorMiAtaque-1;
+			}else{
+				Vida=Vida-MiAtaque;
+				PotenciadorMiAtaque=0;
+			}
+		}
+		
+		//Función del objeto de Furia
+		function Furia(){
+			if (Oro>=200){
+				Oro=Oro-200;
+				PotenciadorMiAtaque=PotenciadorMiAtaque+1.5;
+				CuentaPotenciadorMiAtaque=10;
+				document.getElementById("numeroOro").innerHTML=Oro;
+				document.getElementById("numeroOro2").innerHTML=Oro;
+				Xinfo="Has comprado Furia,* 1,5 de Ataque, - 200 oro.";
+				ActualizarInfo(Xinfo);	
+			}else{
+				Xinfo="Necesitas 200 oro para comprar Furia.";
+				ActualizarInfo(Xinfo);	
+			}
 		}
 
     </script>
