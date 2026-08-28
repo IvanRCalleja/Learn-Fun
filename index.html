@@ -231,7 +231,7 @@
             <img id="imgtituloanuncio" src="Anuncio.png"></img>
         </div>
         <div id="inicio2">
-            <img id="imgtitulo1" src="Titulo1.png"></img>
+            <img id="imgtitulo1" src="./Titulo2.png"></img>
             <div id="inicio2">
                 <div id="piepagina2">
                     <h7 >Juega Una temporada dek fubtol meintras respondes a las prguntas</h7>
@@ -344,10 +344,18 @@
 			</div>
 			 <div id="divobjeto4">
 				<div>
-					<button id="Ladron" class="Objetos" onclick="Pocion()">Espada del rey, 1500 Oro</button>
+					<button id="MejorarAtaque" class="Objetos" onclick="MejorarAtaque()">Mejorar Espada, 200 Oro</button>
 				</div>
 				<div>
 					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
+				</div>
+			</div>
+			 <div id="divobjeto5">
+				<div>
+					<button id="Ladron" class="Objetos" onclick="Pocion()">+ Vida, 600 Oro</button>
+				</div>
+				<div>
+					<h7 class="ObjetosDes">Aumentas en 10 puntos de salud tu maximo de vida a cambio de 600 de oro.</h7>
 				</div>
 			</div>
             <!--<input type="text" name="Respuesta" id="Respuesta" placeholder="Respuesta">
@@ -402,6 +410,12 @@
         CuentaLadron=0;
 		PotenciadorMiAtaque=0;
 		CuentaPotenciadorMiAtaque=0;
+		NivelEspada=0;
+		NivelDefensa=0;
+		TipoMonstruo=0;
+		TipoJugador=0;
+		VidaMaxima=100;
+		
 		
         //Preguntas de prueba
         const id01 = ["¿Cuanto es 6x6?","36","30","32","16",""]; //Pregunta con id 01
@@ -623,17 +637,6 @@ Vida=100;
             
             
             document.getElementById("vida").innerHTML=Vida;
-//Cambio de lugar
-			if(Victorias==3){
-			console.log("cambio de entorno");
-				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoLava.png')";
-			
-			}else if(Victorias==6){
-			console.log("cambio de entorno");
-				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCementerio.png')";
-			
-			}
-            
         }
 
 
@@ -786,16 +789,29 @@ Vida=100;
 			document.getElementById("numeroOro").innerHTML=Oro;
 			NuevoMonstruo();
             console.log("Has derrotado al monstruo y ha venido uno nuevo");
+			
+			//Cambio de lugar
 			if(Victorias==1){
 			EntreNivel();
-			}else if(Victorias==3){
+			}else if(Victorias==4){
 			AtaqueRival=AtaqueRival+10;
+			document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoDesierto.png')";
 			EntreNivel();
-			}else if(Victorias==6){
+			}else if(Victorias==8){
+			document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoLava.png')";
 			EntreNivel();
-			}else if(Victorias==10){
+			}else if(Victorias==12){
+			document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCementerio.png')";
+			EntreNivel();
+			}else if(Victorias==16){
 			document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCastillo.png')";
 			EntreNivel();
+			}else if(Victorias==20){
+			document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoAzotea.png')";
+			EntreNivel();
+			}else if(Victorias==21){
+			Perdido();
+			
 			}else{
 			recargar();
 			}
@@ -841,6 +857,9 @@ Vida=100;
 				ActualizarInfo(Xinfo);
 				
 			
+			}else{
+				Xinfo="Necesitas 300 oro para comprar Poción.";
+				ActualizarInfo(Xinfo);	
 			}
 		}
 		function EntreNivel(){
@@ -916,17 +935,73 @@ Vida=100;
 		
 		//Función del objeto de Furia
 		function Furia(){
-			if (Oro>=200){
-				Oro=Oro-200;
-				PotenciadorMiAtaque=PotenciadorMiAtaque+1.5;
-				CuentaPotenciadorMiAtaque=10;
-				document.getElementById("numeroOro").innerHTML=Oro;
-				document.getElementById("numeroOro2").innerHTML=Oro;
-				Xinfo="Has comprado Furia,* 1,5 de Ataque, - 200 oro.";
-				ActualizarInfo(Xinfo);	
-			}else{
-				Xinfo="Necesitas 200 oro para comprar Furia.";
-				ActualizarInfo(Xinfo);	
+			if(CuentaPotenciadorMiAtaque>=1){
+				Xinfo="Tienes Furia activa todavia";
+				ActualizarInfo(Xinfo);				
+			}else {
+				if (Oro>=200){
+					Oro=Oro-200;
+					PotenciadorMiAtaque=PotenciadorMiAtaque+1.5;
+					CuentaPotenciadorMiAtaque=10;
+					document.getElementById("numeroOro").innerHTML=Oro;
+					document.getElementById("numeroOro2").innerHTML=Oro;
+					Xinfo="Has comprado Furia,* 1,5 de Ataque, - 200 oro.";
+					ActualizarInfo(Xinfo);	
+				}else{
+					Xinfo="Necesitas 200 oro para comprar Furia.";
+					ActualizarInfo(Xinfo);	
+				}
+			}
+		}
+		//Función del objeto de Mejorar espada
+		function MejorarAtaque(){
+			if (NivelEspada==0){
+				if (Oro>=200){
+					Oro=Oro-200;
+					MiAtaque=12;
+					document.getElementById("numeroOro").innerHTML=Oro;
+					document.getElementById("numeroOro2").innerHTML=Oro;
+					Xinfo="Has mejorado tu espada,+2 de Ataque, - 200 oro.";
+					ActualizarInfo(Xinfo);	
+					NivelEspada=1;
+					document.getElementById("MejorarAtaque").innerHTML="Mejorar Espada, 400 Oro";
+					document.getElementById("tuimagen").src="./Jugador2_2.png";
+				}else{
+					Xinfo="Necesitas 200 oro para comprar la mejora.";
+					ActualizarInfo(Xinfo);	
+				}
+		
+			} else if (NivelEspada==1){
+				if (Oro>=400){
+					Oro=Oro-400;
+					MiAtaque=16;
+					document.getElementById("numeroOro").innerHTML=Oro;
+					document.getElementById("numeroOro2").innerHTML=Oro;
+					Xinfo="Has mejorado tu espada,+4 de Ataque, - 400 oro.";
+					ActualizarInfo(Xinfo);	
+					NivelEspada=2;
+					document.getElementById("MejorarAtaque").innerHTML="Mejorar Espada, 800 Oro";
+					document.getElementById("tuimagen").src="./Jugador2_3.png";
+				}else{
+					Xinfo="Necesitas 400 oro para comprar la mejora.";
+					ActualizarInfo(Xinfo);	
+				}
+		
+			}
+			else if (NivelEspada==2){
+				if (Oro>=800){
+					Oro=Oro-800;
+					MiAtaque=20;
+					document.getElementById("numeroOro").innerHTML=Oro;
+					document.getElementById("numeroOro2").innerHTML=Oro;
+					Xinfo="Has mejorado tu espada,+4 de Ataque, - 800 oro.";
+					ActualizarInfo(Xinfo);	
+					NivelEspada=2;
+				}else{
+					Xinfo="Necesitas 800 oro para comprar la mejora.";
+					ActualizarInfo(Xinfo);	
+				}
+		
 			}
 		}
 
