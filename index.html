@@ -29,10 +29,12 @@
         #inicio{
             margin-left: 11%;
             display: flex;
+			flex-wrap:wrap;
         }
         #gameplayPadre{
             display: none;
             margin-left: 11%;
+			flex-wrap:wrap;
         }
         #menujuego{
             margin-left: 32%;
@@ -76,7 +78,7 @@
 		}
         #gameplay{
             margin-top: 30px;
-           
+           flex-wrap:wrap;
             font-size: 26px;
         }
         #gameplayrival{
@@ -150,6 +152,7 @@
            margin-bottom: 10px;
 			font-size:20px;
 		   font-family:"Lucida Console", "Courier New", monospace;
+		   
 		}
 		#numerovictorias{
 		color:white;
@@ -177,6 +180,10 @@
 		}
 		#abajo2{
 		display:flex;
+		flex-wrap:wrap;
+		}
+		.divobjeto3{
+		
 		}
         .respuestas{
            background-image: url("Fondo2.png");
@@ -223,6 +230,9 @@
 		#Furia:hover{
 		background-image: url("Fondo5_1.png");
 		}
+		.prueba6{
+		 flex: 1 1 50px;
+		max-width: 300px;}
     </style>
 </head>
 <body>
@@ -319,42 +329,42 @@
 		
 			<div id="piepagina3">
 			
-				<div>
+				<div class="prueba6">
 					<button id="Pocion" class="Objetos" onclick="Pocion()">Poción 300 Oro</button>
 				</div>
-				<div>
+				<div class="prueba6">
 					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
 				</div>
             </div>
             <div id="divobjeto2">
-				<div>
+				<div class="prueba6">
 					<button id="Furia" class="Objetos" onclick="Furia()">Furia 200 Oro</button>
 				</div>
-				<div>
+				<div class="prueba6">
 					<h7 class="ObjetosDes">Aumentas el daño de tu ataque durante 10 turnos, a cambio de 200 de oro.</h7>
 				</div>
 			</div>
 			 <div id="divobjeto3">
-				<div>
+				<div class="prueba6">
 					<button id="Ladron" class="Objetos" onclick="Ladron()">Ladrón 250 Oro</button>
 				</div>
-				<div>
+				<div class="prueba6">
 					<h7 class="ObjetosDes">Aumentas el oro recibido durante 10 turnos a cambio de 250 de oro.</h7>
 				</div>
 			</div>
 			 <div id="divobjeto4">
-				<div>
+				<div class="prueba6">
 					<button id="MejorarAtaque" class="Objetos" onclick="MejorarAtaque()">Mejorar Espada, 200 Oro</button>
 				</div>
-				<div>
+				<div class="prueba6">
 					<h7 class="ObjetosDes">Regeneras 10 de salud a cambio de 300 de oro.</h7>
 				</div>
 			</div>
 			 <div id="divobjeto5">
-				<div>
+				<div class="prueba6">
 					<button id="Ladron" class="Objetos" onclick="Pocion()">+ Vida, 600 Oro</button>
 				</div>
-				<div>
+				<div class="prueba6">
 					<h7 class="ObjetosDes">Aumentas en 10 puntos de salud tu maximo de vida a cambio de 600 de oro.</h7>
 				</div>
 			</div>
