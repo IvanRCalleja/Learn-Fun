@@ -71,13 +71,18 @@
 		#info{
 		background-color:white;
 		 font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+		  box-shadow: 5px 10px #888888;
 		
 		}
 		#infoarriba1{
-		background-color:gray;
+		background-color:white;
+		 opacity: 0.75;
+		  box-shadow: 5px 10px #888888;
 		}
 		#infoarriba2{
-		background-color:dark-gray;
+		background-color:white;
+		 opacity: 0.5;
+		 box-shadow: 5px 10px #888888;
 		}
         #gameplay{
             margin-top: 30px;
@@ -87,19 +92,37 @@
         #gameplayrival{
             display: flex;
             margin-right: 4%;
+			border-color:red;
+			border-radius:20px;
+			border-width:5px;
+			border-style: solid;
         }
         #gameplaytu{
             display: flex;
+			border-color:green;
+			border-radius:20px;
+			border-width:5px;
+			border-style: solid;
         }
 		#gameplayinfomonstruos{
 		 display: flex;
+		 color:black;
+		 border-color:black;
+			border-radius:20px;
+			border-width:5px;
+			border-style: solid;
 		}
 		#gameplayinfooro{
 		 display: flex;
+		 border-color:yellow;
+			border-radius:20px;
+			border-width:10px;
+			border-style: solid;
 		}
         #gameplayvidas{
             display: flex;
             margin-bottom: -30px;
+			background-color:white;
         }
         #gameplayimagenes{
             display: flex;
@@ -166,31 +189,39 @@
 		   
 		}
 		#numerovictorias{
-		color:white;
+		color:black;
 		 font-family: Vegur, 'PT Sans', Verdana, sans-serif;
 	
 		}
 		#textovictorias{
-		color:white;
+		color:black;
 		 font-family: Vegur, 'PT Sans', Verdana, sans-serif;
 		}
 		#numeroOro{
 		color:yellow;
+		font-family: Vegur, 'PT Sans', Verdana, sans-serif;
 
 		}
 		#numeroOro2{
 		color:yellow;
+		font-family: Vegur, 'PT Sans', Verdana, sans-serif;
 
 		}
 		#textoOro{
 		color:yellow;
+		font-family: Vegur, 'PT Sans', Verdana, sans-serif;
 		}
 		#textoeventosaventura{
 		color:white;
 		}
 		#gameplayinformacion{
-		background-color:brown;
+		background-color:black;
 		 font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+		 border-style: groove;
+		 border-width:5px;
+		 border-color:orange;
+		 font-size:20px;
+		 border-radius: 20px 20px 20px 20px;
 		}
 		#abajo2{
 		display:flex;
@@ -304,21 +335,21 @@
     <div id="gameplay">
         <div id="gameplayvidas">
 			<div id="gameplayinfomonstruos">
-			<h2 id="textovictorias">Montruos derrotados: </h2>
-			<h2 id="numerovictorias">0</h2>
+				<h2 id="textovictorias">Montruos derrotados: </h2>
+				<h2 id="numerovictorias">0</h2>
 			</div>
 			<div id="gameplayinfooro">
-			<h2 id="textoOro">Oro: </h2>
-			<h2 id="numeroOro">0</h2>
+				<h2 id="textoOro">Oro: </h2>
+				<h2 id="numeroOro">0</h2>
 			</div>
-            <div id="gameplayrival">
+			<div id="gameplayrival">
                 <h2 id="textovidae">S3ctor, Vida enemigo:</h2>
                 <h2 id="vida">100</h2>
-            </div>
-            <div id="gameplaytu">
+			</div>
+			<div id="gameplaytu">
                 <h2 id="textovidatu">Mi vida:</h2>
                 <h2 id="tuvida">100</h2>
-            </div>
+			</div>
         </div>
         <div id="gameplayimagenes">
                 <img id="imagenenemigo" src="">
@@ -326,9 +357,9 @@
         </div>
         <img id="imagenenemigo" src="">
 		<div id="gameplayinformacion">
-        <h2 id="infoarriba2">---</h2>
-		<h2 id="infoarriba1">---</h2>
-		<h2 id="info">Acierta las preguntas para hacer daño</h2>
+			<h2 id="infoarriba2">---</h2>
+			<h2 id="infoarriba1">---</h2>
+			<h2 id="info">Acierta las preguntas para hacer daño</h2>
 		</div>
         <div id="Principal">
         </div>
@@ -518,12 +549,12 @@
 		const id20His18 = ["¿Qué evento marcó la crisis de los misiles en 1962?","Instalación de misiles en Cuba","Revolución Cubana","Construcción del Muro de Berlín","Guerra Civil en Grecia",""]; //Pregunta con id 01
 		const id20His19 = ["¿Qué acción tomaron EEUU y sus aliados en Berlín en 1948?","Unieron sus sectores en Berlín","Desplegaron tropas en Berlín","Establecieron un gobierno comunista","Iniciaron la Guerra Civil",""]; //Pregunta con id 01
 		const id20His20 = ["¿Qué líder cubano se opuso al régimen de Batista en 1959?","Fidel Castro","Raúl Castro","Mao Zedong","Che Guevara",""]; //Pregunta con id 01
-		const id20His21 = ["¿Cuanto es 60+42?","102","92","82","104",""]; //Pregunta con id 01
+		const id20His21 = ["¿Cuál define mejor la naturaleza de la Guerra Fría?","Fue una confrontación diplomática, ideológica, económica y estratégica entre Estados Unidos y la Unión Soviética sin una guerra directa general entre ambas potencias.","Fue una alianza económica entre las potencias vencedoras para reconstruir conjuntamente la Unión Soviética.","Fue un conflicto colonial entre Francia y Alemania por el control político de Europa oriental.","Fue una guerra exclusivamente militar entre Estados Unidos y la Unión Soviética desarrollada principalmente en Europa occidental.",""]; //Pregunta con id 01
 		const id20His22 = ["¿Cuanto es 60+42?","102","92","82","104",""]; //Pregunta con id 01
 		const id20His23 = ["¿Cuanto es 60+42?","102","92","82","104",""]; //Pregunta con id 01
 	
 
-        const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20]; //Id de las preguntas, Arrays donde se guardan los Arrays
+        const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21]; //Id de las preguntas, Arrays donde se guardan los Arrays
 
        
 Vida=100;
