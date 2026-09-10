@@ -500,6 +500,11 @@
                 <div id="piepagina2">
                     <h7 >Matematicas</h7>
                 </div>
+				
+				<button id="botonjugar" onclick="ElegirTema(2)">Virus, Moneras, Protistas y Hongos: Estructura y Funciones</button><br>
+                <div id="piepagina2">
+                    <h7 >Virus, Moneras, Protistas y Hongos: Estructura y Funciones</h7>
+                </div>
             </div>
             <div id="piepagina">
                 <h7 >Con la colaboración de Alejandro Sanchez</h7>
@@ -562,7 +567,7 @@
 		const id1Mat12 = ["¿Cuanto es 34+56?","90","84","86","88",""]; //Pregunta con id 01
 		const id1Mat13 = ["¿Cuanto es 60+42?","102","92","82","104",""]; //Pregunta con id 01
 		
-		const  IdesTema1 = [id1Mat1,id1Mat2,id1Mat3,id1Mat4,id1Mat5,id1Mat6,id1Mat7,id1Mat8,id1Mat9,id1Mat10,id1Mat11,id1Mat12,id1Mat13]; //Id de las preguntas, Arrays donde se guardan los Arrays
+		const  IdesMatTema1 = [id1Mat1,id1Mat2,id1Mat3,id1Mat4,id1Mat5,id1Mat6,id1Mat7,id1Mat8,id1Mat9,id1Mat10,id1Mat11,id1Mat12,id1Mat13]; //Id de las preguntas, Arrays donde se guardan los Arrays
 		
 		
 		//Preguntas Matematicas Nivel 2, Sumas 3 cifras
@@ -582,6 +587,18 @@
 	
 	
         const  IdesMatTema2 = [id1Mat1,id1Mat2,id1Mat3,id1Mat4,id1Mat5,id1Mat6,id1Mat7,id1Mat8,id1Mat9,id1Mat10,id1Mat11,id1Mat12,id1Mat13]; //Id de las preguntas, Arrays donde se guardan los Arrays
+		
+		
+		//Preguntas Biologia Nivel 2, Virus, Moneras, Protistas y Hongos: Estructura y Funciones
+        const id2Bio1 = ["¿Cuál de las siguientes NO es una parte fundamental de la estructura de un virus?","Ribosoma","Envoltura","Material genético","Cápsida",""]; //Pregunta con id 01
+		const id2Bio2 = ["¿Qué tipo de célula infectan los virus?","Todo tipo de organismos","Solo células animales","Solo bacterias","Solo células vegetales",""];
+		const id2Bio3 = ["¿Qué ocurre durante la fase lítica del ciclo de infección viral?","La célula se rompe y libera nuevos virus","La célula huésped replica el ADN viral","El virus se adhiere a la célula huésped","El virus inyecta su material genético en la célula",""];
+		const id2Bio4 = ["¿Cuál es la principal característica de los organismos del Reino Monera?","Son procariotas","Son eucariotas","Son macroscópicos","Son multicelulares",""];
+		
+
+
+		const  IdesBioTema2 =[id2Bio1,id2Bio2,id2Bio3,id2Bio4];
+		
 		
 				//Preguntas Historia Nivel 2, Guerra fria
         const id20His1 = ["¿En que año acabó la guerra fria?","1991","1990","1989","1971",""]; //Pregunta con id 01
@@ -612,7 +629,7 @@
         const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21]; //Id de las preguntas, Arrays donde se guardan los Arrays
 		
 		//Array de arrays de los temas
-		const Temas = [IdesHisTema20,IdesMatTema2];
+		const Temas = [IdesHisTema20,IdesMatTema2,IdesBioTema2];
        
 Vida=100;
         TuVida=100;
@@ -698,13 +715,14 @@ Vida=100;
         }
 
         function recargar(){
-
+			
+			const Temas = [IdesHisTema20,IdesMatTema2,IdesBioTema2];
            //Array de arrays de los temas
-			const ElegirTema=[IdesHisTema20,IdesMatTema2];
 		
-			NumeroAleatorio = Math.floor(Math.random()*ElegirTema[TemaElegido].length); //Numero Aleatorio para la pregunta
 		
-			GuardarId = ElegirTema[TemaElegido][NumeroAleatorio];
+			NumeroAleatorio = Math.floor(Math.random()*Temas[TemaElegido].length); //Numero Aleatorio para la pregunta
+		
+			GuardarId = Temas[TemaElegido][NumeroAleatorio];
 			//GuardarId = Ides[0];
 
    
@@ -1064,6 +1082,12 @@ Vida=100;
 				Vida=Vida-MiAtaque;
 				PotenciadorMiAtaque=0;
 			}
+			  document.getElementById("gameplayrival").style.backgroundColor="orange";
+                setInterval(AnimacionColor,1000);
+                function AnimacionColor(){
+                    document.getElementById("gameplayrival").style.backgroundColor="white";
+                    clearInterval(AnimacionColor);
+                }
 		}
 		
 		//Función del objeto de Furia
@@ -1148,6 +1172,9 @@ Vida=100;
 				TemaElegido=1;
 				console.log("Elegido Mates");
 				console.log(TemaElegido);
+			}else if(Numero==2){
+				TemaElegido=2;
+			
 			}
 		
 			 TransicionTemaJugar(1)
