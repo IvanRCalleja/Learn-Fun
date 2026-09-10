@@ -72,17 +72,23 @@
 		background-color:white;
 		 font-family: Vegur, 'PT Sans', Verdana, sans-serif;
 		  box-shadow: 5px 10px #888888;
+		  -webkit-text-stroke: 1px black;
+			font-weight: bold;
 		
 		}
 		#infoarriba1{
 		background-color:white;
 		 opacity: 0.75;
 		  box-shadow: 5px 10px #888888;
+		  -webkit-text-stroke: 1px black;
+			font-weight: bold;
 		}
 		#infoarriba2{
 		background-color:white;
 		 opacity: 0.5;
 		 box-shadow: 5px 10px #888888;
+		 -webkit-text-stroke: 1px black;
+			font-weight: bold;
 		}
         #gameplay{
             margin-top: 30px;
@@ -96,6 +102,8 @@
 			border-radius:20px;
 			border-width:5px;
 			border-style: solid;
+			-webkit-text-stroke: 1px black;
+			font-weight: bold;
         }
         #gameplaytu{
             display: flex;
@@ -103,6 +111,8 @@
 			border-radius:20px;
 			border-width:5px;
 			border-style: solid;
+			-webkit-text-stroke: 1px black;
+			font-weight: bold;
         }
 		#gameplayinfomonstruos{
 		 display: flex;
@@ -111,6 +121,8 @@
 			border-radius:20px;
 			border-width:5px;
 			border-style: solid;
+			-webkit-text-stroke: 1px black;
+			font-weight: bold;
 		}
 		#gameplayinfooro{
 		 display: flex;
@@ -118,6 +130,8 @@
 			border-radius:20px;
 			border-width:10px;
 			border-style: solid;
+			-webkit-text-stroke: 1px black;
+			font-weight: bold;
 		}
         #gameplayvidas{
             display: flex;
@@ -191,15 +205,21 @@
 		#numerovictorias{
 		color:black;
 		 font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+		 -webkit-text-stroke: 1px black;
+			font-weight: bold;
 	
 		}
 		#textovictorias{
 		color:black;
 		 font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+		 -webkit-text-stroke: 1px black;
+			font-weight: bold;
 		}
 		#numeroOro{
 		color:yellow;
 		font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+		-webkit-text-stroke: 1px black;
+			font-weight: bold;
 
 		}
 		#numeroOro2{
@@ -210,6 +230,8 @@
 		#textoOro{
 		color:yellow;
 		font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+		-webkit-text-stroke: 1px black;
+			font-weight: bold;
 		}
 		#textoeventosaventura{
 		color:white;
@@ -231,18 +253,27 @@
 		
 		}
         .respuestas{
-           background-image: url("Fondo2.png");
+           background-image: url("Fondo2_1.png");
             width: 14%px;
             height: 75px;
-            font-size: 30px;
+            font-size: 35px;
 			 font-family: Vegur, 'PT Sans', Verdana, sans-serif;
 			border-radius: 20px 20px 20px 20px;
+			color:white;
+			border-color:#FFFFF0;
+			border-width:3px;
+			border-style: solid;
+			box-shadow: 5px 10px #DCDCDC;
+			-webkit-text-stroke: 1px black;
+			font-weight: bold;
 			
         }
         .respuestas:hover{
-            color:white;
+            color:black;
 			border-color:white;
-			background-image: url("Fondo2_1.png");
+			background-image: url("Fondo2.png");
+			box-shadow: 5px 10px black;
+			-webkit-text-stroke: 1px white;
         }
 		 .Objetos{
            background-image: url("Fondo3.png");
@@ -294,7 +325,7 @@
                     <h7 >Juega Una temporada dek fubtol meintras respondes a las prguntas</h7>
                 </div>
                
-                <button id="botonjugar" onclick="Jugar()">JUEGO RAPIDO</button><br>
+                <button id="botonjugar" onclick="TransicionTemaJugar(0)">JUEGO RAPIDO</button><br>
 				
 				<div id="piepagina2">
                     <h7 >Recorre el peligroso universo para salvar el reino</h7>
@@ -311,9 +342,6 @@
                 <h7 >Con la colaboración de Alejandro Sanchez</h7>
             </div>
         </div>
-       
-        
-       
     </div>
 
     <div id="menujuego">
@@ -454,11 +482,37 @@
         </div>
         
     </div>
+	<div id="MenuTemas">
+		<div id="inicio3">
+            <img id="imgtituloanuncio" src="Anuncio.png"></img>
+        </div>
+        <div id="inicio2">
+  
+            <div id="inicio2">
+               
+                <button id="botonjugar" onclick="ElegirTema(0)">Guerra Fria</button><br>
+				
+				<div id="piepagina2">
+                    <h7 >Guerra Fria</h7>
+                </div>
+               
+                <button id="botonjugar" onclick="ElegirTema(1)">Sumas</button><br>
+                <div id="piepagina2">
+                    <h7 >Matematicas</h7>
+                </div>
+            </div>
+            <div id="piepagina">
+                <h7 >Con la colaboración de Alejandro Sanchez</h7>
+            </div>
+        </div>
+        
+    </div>
     <script>
         document.getElementById("gameplay").hidden=true;
         document.getElementById("menujuego").hidden=true;
 		document.getElementById("menuMapa").hidden=true;
         document.getElementById("dialogosiniciales").hidden=true;
+		document.getElementById("MenuTemas").hidden=true;
         MiNombre="";
         Dialogo=0;
 		Oro=0;
@@ -472,6 +526,7 @@
 		TipoMonstruo=0;
 		TipoJugador=0;
 		VidaMaxima=100;
+		TemaElegido=1;
 		
 		
         //Preguntas de prueba
@@ -555,16 +610,16 @@
 	
 
         const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21]; //Id de las preguntas, Arrays donde se guardan los Arrays
-
+		
+		//Array de arrays de los temas
+		const Temas = [IdesHisTema20,IdesMatTema2];
        
 Vida=100;
         TuVida=100;
 		Victorias=0;
 
         function Jugar(){
-            document.getElementById("inicio").hidden=true;
-            document.getElementById("inicio").style.display="none";
-            document.getElementById("gameplayPadre").style.display="flex";
+           
             Dialogo=3;
            /* if(Dialogo==0){
                 
@@ -615,14 +670,14 @@ Vida=100;
         document.getElementById("info").innerHTML=Info;
         console.log(Vida);
 		
-		//Array de arrays de los temas
-		const ElegirTema=[Ides,IdesTema1,IdesHisTema20];
 		
-        NumeroAleatorio = Math.floor(Math.random()*IdesHisTema20.length); //Numero Aleatorio para la pregunta
+        NumeroAleatorio = Math.floor(Math.random()*Temas[TemaElegido].length); //Numero Aleatorio para la pregunta
 		
-        GuardarId = ElegirTema[2][NumeroAleatorio];
+        GuardarId = Temas[TemaElegido][NumeroAleatorio];
         //GuardarId = Ides[0];
-        
+		
+		
+        console.log("Tema elegido"+TemaElegido);
         console.log(GuardarId[0]);
         document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
         RespuestaCorrecta=GuardarId[1];
@@ -645,11 +700,11 @@ Vida=100;
         function recargar(){
 
            //Array de arrays de los temas
-			const ElegirTema=[Ides,IdesTema1,IdesHisTema20];
+			const ElegirTema=[IdesHisTema20,IdesMatTema2];
 		
-			NumeroAleatorio = Math.floor(Math.random()*IdesHisTema20.length); //Numero Aleatorio para la pregunta
+			NumeroAleatorio = Math.floor(Math.random()*ElegirTema[TemaElegido].length); //Numero Aleatorio para la pregunta
 		
-			GuardarId = ElegirTema[2][NumeroAleatorio];
+			GuardarId = ElegirTema[TemaElegido][NumeroAleatorio];
 			//GuardarId = Ides[0];
 
    
@@ -733,12 +788,10 @@ Vida=100;
                 console.log("Está mal");
                 TuVida=TuVida-AtaqueRival;
                 document.getElementById("tuvida").innerHTML=TuVida;
-                document.getElementById("tuvida").style.color="red";
-                document.getElementById("tuvida").style.fontSize="35px";
+                document.getElementById("gameplaytu").style.backgroundColor="red";
                 setInterval(AnimacionColor,1000);
                 function AnimacionColor(){
-                    document.getElementById("tuvida").style.color="green";
-                    document.getElementById("tuvida").style.fontSize="30px";
+                    document.getElementById("gameplaytu").style.backgroundColor="white";
                     clearInterval(AnimacionColor);
                 }
 				if(TuVida<=0){
@@ -1083,6 +1136,38 @@ Vida=100;
 				}
 		
 			}
+		}
+		
+		//funcion de elegir tema
+		function ElegirTema(Numero){
+			if(Numero==0){
+				console.log("Elegido Historia");
+				TemaElegido=0;
+				console.log(TemaElegido);
+			} else if(Numero==1){
+				TemaElegido=1;
+				console.log("Elegido Mates");
+				console.log(TemaElegido);
+			}
+		
+			 TransicionTemaJugar(1)
+		}
+		
+		function TransicionTemaJugar(Numero){
+			if(Numero==0){
+				document.getElementById("inicio").hidden=true;
+				document.getElementById("inicio").style.display="none";
+				document.getElementById("MenuTemas").style.display="flex";
+				document.getElementById("MenuTemas").hidden=false;
+				
+			} else if(Numero==1){
+				document.getElementById("MenuTemas").hidden=true;
+				document.getElementById("MenuTemas").style.display="none";
+				document.getElementById("gameplayPadre").style.display="flex";
+				document.getElementById("gameplayPadre").hidden=false;
+				Jugar();
+			}
+		
 		}
 
     </script>
