@@ -73,6 +73,21 @@
 			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
 		
 		}
+		
+		#MenuTemas{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+			background-color:white;
+			margin:20px;
+			margin-left:200px;
+			margin-right:200px;
+			padding:20px;
+			border-radius:10px;
+			
+			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
+		
+		}
 		#inicio2{
 		display:flex;
 			flex-direction:column;
@@ -100,9 +115,36 @@
 		background-color:yellow;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
+		.botontema{
+		background-color:white;
+		color:black;
+		border-radius:35px;
+		border-width:4px gray;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
+		width:110px;
+		height:25px;
+		text-align:center;
+		padding:15px;
+		font-family:sans-serif;
+		font-weight: bold;
+		}
 		#imgtitulo1{
 		width:400px;
 		height:220px;
+		}
+		.EleccionTemas{
+		display:flex;
+		
+		
+		}
+		.EleccionTemas1{
+		display:flex;
+		flex-direction:column;
+		
+		}
+		.EleccionTemas a{
+		color:black;
+		
 		}
 	
 		@media(max-width:700px){
@@ -170,7 +212,7 @@
                     <h7 >Juega una temporada de fubtol meintras respondes a las prguntas</h7>
                 </div>
                
-                <a class="botonjugar"  onclick="TransicionTemaJugar(0)">JUEGO RAPIDO</a><br>
+                <a class="botonjugar" href="javascript:Transiciones(1);"  onclick="Transiciones(1)">JUEGO RAPIDO</a><br>
 				
 				<div id="piepagina2">
                     <h7 >Recorre el peligroso universo para salvar el reino</h7>
@@ -189,7 +231,53 @@
         </div>
 		                
     </div>
+	
+	<div id="MenuTemas">
+	
+        <div id="inicio2">
+  
+            <div id="inicio2">
+				 <div class="EleccionTemas1">
+					<h2>Historia</h2>
+					<div class="EleccionTemas">
+						<a class="botontema" onclick="ElegirTema(1)">Guerra Fria</a>
+						<a class="botontema" onclick="ElegirTema(1)">Guerra Civil</a>
+						<a class="botontema" onclick="ElegirTema(1)">Revolución Francesa</a>
+						
+					</div>
+				</div>
+               <br>
+			   <div  class="EleccionTemas1">
+					<h2>Matematicas</h2>
+					<div class="EleccionTemas">
+						<a class="botontema" onclick="ElegirTema(1)">Sumas de 2 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Sumas de 3 cifras</a>
+						
+						<a class="botontema" onclick="ElegirTema(1)">Restas de 2 cifras</a>
+					</div>
+				</div>
+			
+            </div>
+         
+        </div>
+        
+    </div>
 	<h7 >Con la colaboración de Alejandro Sanchez</h7>
+	
+	
+	 <script>
+	 document.getElementById("MenuTemas").hidden=true;
+	  document.getElementById("MenuTemas").style.display="none";
+	 function Transiciones(numero){
+	 
+		if(numero==1){
+		 document.getElementById("inicio").hidden=true;
+		 document.getElementById("inicio").style.display="none";
+		 document.getElementById("MenuTemas").hidden=false;
+	  document.getElementById("MenuTemas").style.display="flex";
+		}
+	 }
+	 </script>
 </body>
 </html>
 
