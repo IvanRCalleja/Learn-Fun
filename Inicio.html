@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Learn&Fun Hacia la gloria</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+	<link rel="icon" type="image/png" sizes="32x32" href="Titulo3.png">
+    <style>
+        body{
+        
+            background-color:#F0F0F7;
+			margin: 0px;
+			font-family:'Poppins',sans-serif;
+			color:black;
+        }
+		
+		a{
+		color:white;
+		text-decoration:none;
+		}
+		
+		#Div2 a{
+		color:Black;
+		text-decoration:none;
+		}
+		
+		nav a{
+		padding-right:10px;
+		font-weight:600px;
+		}
+		
+		nav a:hover{
+		color:yellow;
+		}
+		
+		header{
+		display: flex;
+		height: 70px;
+		background-color: #5441B5;
+		justify-content: space-between;
+		align-items: center;
+		padding: 3px;
+		color:white;
+		}
+		
+		.BarraLogo{
+		display: flex;
+		align-items: center;
+		
+		}
+		
+		.BarraLogo img{
+		height: 50px;
+		margin-right:10px;
+		}
+		
+		#Div1{
+			background-color:#FFFFE5;
+			margin:20px;
+			padding:40px;
+			border-radius:20px;
+			border-width:2px;
+				box-shadow: 1px 10px 19px 2px rgba(0,0,0,0.10);
+			width:1100px;
+			height:200px;
+		}
+		
+		#Div2{	
+		display:flex;
+		
+		}
+		#Div2 .PrimerDivTarjetas{
+			
+			display:flex;
+			flex-direction:column;
+			
+		}
+		#DivPrincipal{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+		}
+		.SeniorDiv{
+		display:flex;
+		background-color:white;
+			margin:20px;
+			padding:40px;
+			border-radius:20px;
+			border-width:2px;
+			box-shadow: 1px 10px 19px 2px rgba(0,0,0,0.10);
+			width:500px;
+			height:200px;
+			
+		}
+		.SeniorDiv img{
+			width:200px;
+			height:200px;
+		}
+		#SeniorDiv1{
+		background-color:#04CC97;
+		color:white;
+		}
+		#SeniorDiv2{
+		background-color:#ED5402;
+		color:white;
+		}
+		.botonjugar{
+		background-color:white;
+		color:black;
+		border-radius:20px;
+		border-width:2px;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.15);
+		width:100px;
+		height:100px;
+		text-align:center;
+		padding:10px;
+		font-family:sans-serif;
+		}
+		
+		#titulodiv2{
+			display:flex;
+			flex-direction:row;
+			
+		}
+		#titulodiv2 h1{
+		text-align:left;
+		}
+		@media(max-width:700px){
+			header{
+			flex-direction:column;
+			min-height: 80px;
+			padding: 10px;
+			}
+			#Div2{	
+			flex-direction:column;
+			}
+			#Div1{	
+			width:300px;
+			height:300px;
+			flex-direction:column;
+			}
+			.SeniorDiv{
+		
+			width:300px;
+			height:200px;
+			
+		}
+		}
+    </style>
+</head>
+<body>
+	<header>
+		<div class="BarraLogo">
+			<img id="imgtituloanuncio" src="Titulo3.png"></img>
+			<h2 class="nombreempresa">Learn&Fun</h2>
+		</div>
+		<nav>
+				<a href="" class="nav-link"> Inicio</a>
+				<a href="" class="nav-link"> Sobre nosotros</a>
+				<a href="" class="nav-link"> Perfil</a>	
+			</nav>
+	</header>
+	<div id="DivPrincipal">
+		<div  id="Div1">
+			<h1>Divierte y aprende al mismo tiempo.</h1>
+			<p>Es mucho mas facil aprender si te estas divirtiendo y en Learn&Fun es lo que creemos, nada de aburridas clases y horas releyendo apuntes.</p>
+			<p>Con 2 juegos diferentes de preguntas y respuestas sobre el tema que quieras, tienes para elegir entre una aventura de fantasia y otra donde juegas partidos de futbol.</p>
+			
+		</div><br><br>
+		<div id="titulodiv2">
+		<h1 >Elige tu modo de juego</h1>
+		</div>
+		<div id="Div2">
+			<div class="SeniorDiv" id="SeniorDiv1">
+				<div class="PrimerDivTarjetas">
+					<h1>Futbol</h1>
+					<p>Contesta bien las preguntas sobre el tema que eligas para conseguir ganar los partidos.</p>
+					<a class="botonjugar" href="index.html">Jugar ahora</a>
+				</div>
+				<div>
+					<img  src="Titulo3.png"></img>
+				</div>
+			</div>
+			<div class="SeniorDiv" id="SeniorDiv2">
+				<div class="PrimerDivTarjetas">
+					<h1>Aventura</h1>
+					<p>Contesta bien las preguntas sobre el tema que eligas para conseguir ganar los partidos.</p>
+					<a class="botonjugar" href="index.html">Jugar ahora</a>
+				</div>
+				<div>
+					<img  src="jugador2_2.png"></img>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
