@@ -183,7 +183,25 @@
 		margin-bottom:15px;
 		padding-bottom:15px;
 		}
+		#gameplayimagenes{
+		 background-image: url("FondoBosque.png");
+		}
+		#gameplayvidas{
+		display:flex;
+		align-items:center;
 		
+		}
+		#gameplayvidas div{
+		display:flex;
+		align-items:center;
+		
+		}
+		#gameplayimagenes{
+		height:230px;
+		}
+		#gameplayimagenes img{
+		height:230px;
+		}
 		@media(max-width:700px){
 			header{
 			flex-direction:column;
@@ -200,6 +218,11 @@
 			margin-left:50px;
 			
 			}
+			#gameplayPadre{
+			margin-right:50px;
+			margin-left:50px;
+			
+			}
 			#imgtitulo1{
 		width:360px;
 		height:198px;
@@ -207,6 +230,10 @@
 		#inicio4{
 		width:400px;
 		}
+		#gameplay{
+		width:400px;
+		}
+		
 		.botontema{
 			padding-top:15px;
 			padding-bottom:5px;
@@ -230,6 +257,9 @@
 		margin-left:24px;
 		margin-right:24px;
 		
+		}
+		#gameplayimagenes img{
+		height:150px;
 		}
 			
 		}
@@ -436,8 +466,8 @@
 				</div>
 			</div>
 			<div id="gameplayimagenes">
-				<img id="imagenenemigo" src="">
-				<img id="tuimagen" src="">  
+				<img id="imagenenemigo" src="./prueba1.png">
+				<img id="tuimagen"  src="./prueba1.png">  
 			</div>
 			<img id="imagenenemigo" src="">
 			<div id="gameplayinformacion">
@@ -463,6 +493,31 @@
 	  document.getElementById("MenuTemas").style.display="none";
 	  document.getElementById("gameplayPadre").hidden=true;
 	  document.getElementById("gameplayPadre").style.display="none";
+	  
+	  
+	  //Preguntas Historia Nivel 2, Guerra fria
+        const id20His1 = ["¿En que año acabó la guerra fria?","1991","1990","1989","1971",""]; //Pregunta con id 01
+        const id20His2 = ["¿La Guerra Fría empezó después de qué conflicto?","Segunda guerra mundial","Guerra de Vietnam","Primera guerra mundial","Guerra civil",""]; //Pregunta con id 01
+        const id20His3 = ["¿Que 2 principales potencias se enfrentaron?","EEUU y URSS","URSS y Japón","Alemania y EEUU","Alemania y URSS",""]; //Pregunta con id 01
+        const id20His4 = ["¿cómo se llamó la reunión en la que surgieron numerosas discrepancias y fue la antesala de la Guerra Fría?"," Conferencia de Yalta"," Conferencia de Teheran","Conferencia de Berlín","Conferencia de Washignton",""]; //Pregunta con id 01
+        const id20His5 = ["¿Quién era el líder de la URSS al inicio de la Guerra Fría?","Stalin","Lenin","Jrushchov","Brezhnev",""]; //Pregunta con id 01
+        const id20His6 = ["¿Qué presidente declaró el objetivo de llevar a un estadounidense a la Luna?","Kennedy","Eisenhower","Truman","Regan",""]; //Pregunta con id 01
+        const id20His7 = ["¿Quién fue el líder soviético cuyas políticas de Glásnost y Perestroika contribuyeron a la disolución de la Unión Soviética y al fin de la Guerra Fría?","Gorbachov","Brezhnev","Stalin","Trotski",""]; //Pregunta con id 01
+        const id20His8 = ["¿En que año se construyo el muro de Berlín?","1961","1954","1957","1964",""]; //Pregunta con id 01
+		const id20His9 = ["¿Por qué el período histórico llamado Guerra Fríarecibió este nombre?","La rivalidad entre Estados Unidos y la Unión Soviética se dio únicamente en el campo cultural, comercial y político, no bélico.","54","57","56",""]; //Pregunta con id 01
+		const id20His10 = ["Dos organizaciones militares fueron fundadas, una por la Unión Soviética y otra por los Estados Unidos, con el objetivo de asegurar alianzas dentro de la lógica bipolar en la que el mundo vivía durante la Guerra Fría.","Pacto de Varsovia y OTAN","ONU y OTAN"," Pacto de Varsovia y ONU","ONU y OEA",""]; //Pregunta con id 01
+		const id20His11 = ["Entre los conflictos que ocurrieron debido a la disputa ideológica durante la Guerra Fría, podemos mencionar:","Revolución Cubana","Revolución Francesa","Guerra Ruso-Japonesa","Guerra Hispano-Americana",""]; //Pregunta con id 01
+		const id20His12 = ["¿Cuáles hechos se consideran como el fin de la Guerra Fría?","La caída del Muro de Berlín en 1989 y la disolución de la Unión Soviética en 1991.","El final de la dictadura de Pinochet en Chile en 1990.","El fin de la Guerra de Afganistán en 1992.","La Guerra del Golfo Pérsico 1990-1991.",""]; //Pregunta con id 01
+		const id20His13 = ["¿Qué política se implementó en EEUU durante la presidencia de Kennedy?","Coexistencia pacífica","Aislamiento Diplomatico","Intervención directa","Apaciguamiento militar",""]; //Pregunta con id 01
+		const id20His14 = ["¿Cuál fue una de las consecuencias de la construcción del muro de Berlín en 1961?","División de Berlín y control de la emigración","Fin de la Guerra Fría","Unificación de Alemania Oriental y Occidental","Aumento de la cooperación entre bloques",""]; //Pregunta con id 01
+		const id20His15 = ["¿Qué tratado se firmó en 1972 entre EEUU y URSS?","Tratado de limitación de armas nucleares","Pacto de Varsovia","Acuerdo de cooperación económica","Tratado de paz de París",""]; //Pregunta con id 01
+		const id20His16 = ["¿Cuál fue el primer país donde se dio un conflicto significativo durante la Guerra Fría?","Grecia","China","Cuba","Vietnam",""]; //Pregunta con id 01
+		const id20His17 = ["¿Qué programa implementó EEUU en 1947 para ayudar a Europa?","Plan Marshall","Plan de Contención","Plan de Reconstrucción","Plan de Ayuda Internacional",""]; //Pregunta con id 01
+		const id20His18 = ["¿Qué evento marcó la crisis de los misiles en 1962?","Instalación de misiles en Cuba","Revolución Cubana","Construcción del Muro de Berlín","Guerra Civil en Grecia",""]; //Pregunta con id 01
+		const id20His19 = ["¿Qué acción tomaron EEUU y sus aliados en Berlín en 1948?","Unieron sus sectores en Berlín","Desplegaron tropas en Berlín","Establecieron un gobierno comunista","Iniciaron la Guerra Civil",""]; //Pregunta con id 01
+		const id20His20 = ["¿Qué líder cubano se opuso al régimen de Batista en 1959?","Fidel Castro","Raúl Castro","Mao Zedong","Che Guevara",""]; //Pregunta con id 01
+		const id20His21 = ["¿Cuál define mejor la naturaleza de la Guerra Fría?","Fue una confrontación diplomática, ideológica, económica y estratégica entre Estados Unidos y la Unión Soviética sin una guerra directa general entre ambas potencias.","Fue una alianza económica entre las potencias vencedoras para reconstruir conjuntamente la Unión Soviética.","Fue un conflicto colonial entre Francia y Alemania por el control político de Europa oriental.","Fue una guerra exclusivamente militar entre Estados Unidos y la Unión Soviética desarrollada principalmente en Europa occidental.",""]; //Pregunta con id 01
+		
 	 function Transiciones(numero){
 	 
 		if(numero==1){
