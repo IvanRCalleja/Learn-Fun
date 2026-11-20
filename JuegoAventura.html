@@ -158,10 +158,33 @@
 			margin-left:50px;
 			
 			}
+			#MenuTemas{
+			margin-right:50px;
+			margin-left:50px;
+			
+			}
 			#imgtitulo1{
 		width:360px;
 		height:198px;
 		}
+		#inicio4{
+		width:400px;
+		}
+		.botontema{
+			padding-top:15px;
+			padding-bottom:5px;
+			text-align:center;
+			margin-top:10px;
+			}
+				h2{
+			font-size:20px;
+			margin:0px;
+			padding:0px;
+			}
+			
+			.EleccionTemas a{
+				font-size:13px;
+			}
 			
 		}
 		
@@ -176,6 +199,11 @@
 			margin-left:30px;
 			
 			}
+			#MenuTemas{
+			margin-right:30px;
+			margin-left:30px;
+			
+			}
 			
 			.BarraLogo img{
 		height: 40px;
@@ -185,6 +213,15 @@
 		width:288px;
 		height:159px;
 		}
+			h2{
+			font-size:18px;
+			margin:0px;
+			padding:0px;
+			}
+			
+			.EleccionTemas a{
+				font-size:12px;
+			}
 		
 		
 		}
@@ -198,8 +235,8 @@
 		</div>
 		<nav>
 				<a href="./Inicio.html" class="nav-link"> Inicio</a>
-				<a href="./Perfil" class="nav-link"> Sobre nosotros</a>
-				<a href="./Perfil" class="nav-link"> Perfil</a>	
+				<a href="./Perfil.html" class="nav-link"> Sobre nosotros</a>
+				<a href="./Perfil.html" class="nav-link"> Perfil</a>	
 			</nav>
 	</header>
 	<div id="inicio">
@@ -218,7 +255,7 @@
                     <h7 >Recorre el peligroso universo para salvar el reino</h7>
                 </div>
                
-                <a class="botonjugar"  onclick="Jugar()">AVENTURA</a><br>
+                <a class="botonjugar"  href="./Perfil.html" onclick="Jugar()">AVENTURA</a><br>
                 <div id="piepagina2">
                     <h7 >Salir del juego</h7>
                 </div>
@@ -234,11 +271,17 @@
 	
 	<div id="MenuTemas">
 	
-        <div id="inicio2">
+       
   
-            <div id="inicio2">
+            <div id="inicio4">
 				 <div class="EleccionTemas1">
 					<h2>Historia</h2>
+					<div class="EleccionTemas">
+						<a class="botontema" onclick="ElegirTema(1)">Guerra Fria</a>
+						<a class="botontema" onclick="ElegirTema(1)">Guerra Civil</a>
+						<a class="botontema" onclick="ElegirTema(1)">Revolución Francesa</a>
+						
+					</div>
 					<div class="EleccionTemas">
 						<a class="botontema" onclick="ElegirTema(1)">Guerra Fria</a>
 						<a class="botontema" onclick="ElegirTema(1)">Guerra Civil</a>
@@ -257,7 +300,7 @@
 					</div>
 				</div>
 			
-            </div>
+           
          
         </div>
         
