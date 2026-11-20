@@ -88,6 +88,20 @@
 			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
 		
 		}
+		#gameplayPadre{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+			background-color:white;
+			margin:20px;
+			margin-left:200px;
+			margin-right:200px;
+			padding:20px;
+			border-radius:10px;
+			
+			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
+		
+		}
 		#inicio2{
 		display:flex;
 			flex-direction:column;
@@ -301,8 +315,10 @@
 		</div>
 		<nav>
 				<a href="./Inicio.html" class="nav-link"> Inicio</a>
+				<a href="./Inicio.html#titulodiv2" class="nav-link"> Juegos</a>	
 				<a href="./Perfil.html" class="nav-link"> Sobre nosotros</a>
 				<a href="./Perfil.html" class="nav-link"> Perfil</a>	
+				
 			</nav>
 	</header>
 	<div id="inicio">
@@ -345,12 +361,12 @@
 						<h2>Historia</h2><img class="iconosasignaturas" src="iconohistoria.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="ElegirTema(1)">Guerra Fria</a>
-						<a class="botontema" onclick="ElegirTema(1)">Guerra Civil</a>
-						<a class="botontema" onclick="ElegirTema(1)">Revolución Francesa</a>
-						<a class="botontema" onclick="ElegirTema(1)">Guerra Fria</a>
-						<a class="botontema" onclick="ElegirTema(1)">Guerra Civil</a>
-						<a class="botontema" onclick="ElegirTema(1)">Revolución Francesa</a>
+						<a class="botontema" onclick="Jugar(1)">Guerra fria</a>
+						<a class="botontema" onclick="ElegirTema(1)">Guerra civil</a>
+						<a class="botontema" onclick="ElegirTema(1)">Revolución francesa</a>
+						<a class="botontema" onclick="ElegirTema(1)">1ª Guerra mundial</a>
+						<a class="botontema" onclick="ElegirTema(1)">Edad media</a>
+						<a class="botontema" onclick="ElegirTema(1)">Revolución industrial</a>
 						
 					</div>
 				</div>
@@ -363,6 +379,9 @@
 						<a class="botontema" onclick="ElegirTema(1)">Sumas de 2 cifras</a>
 						<a class="botontema" onclick="ElegirTema(1)">Sumas de 3 cifras</a>	
 						<a class="botontema" onclick="ElegirTema(1)">Restas de 2 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Restas de 3 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Multiplicaciones</a>
+						<a class="botontema" onclick="ElegirTema(1)">Números romanos</a>
 					</div>
 				</div>
 				<br>
@@ -371,9 +390,9 @@
 						<h2>Biología</h2><img class="iconosasignaturas" src="iconobiologia.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="ElegirTema(1)">Sumas de 2 cifras</a>
-						<a class="botontema" onclick="ElegirTema(1)">Sumas de 3 cifras</a>	
-						<a class="botontema" onclick="ElegirTema(1)">Restas de 2 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Virus, moneras, protistas y hongos.</a>
+						<a class="botontema" onclick="ElegirTema(1)">Celulas eucariotas</a>	
+						<a class="botontema" onclick="ElegirTema(1)">Cuerpo humano</a>
 					</div>
 				</div>
 				<br>
@@ -382,9 +401,9 @@
 						<h2>Lenguas extranjera inglés</h2><img class="iconosasignaturas" src="iconoingles.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="ElegirTema(1)">Sumas de 2 cifras</a>
-						<a class="botontema" onclick="ElegirTema(1)">Sumas de 3 cifras</a>	
-						<a class="botontema" onclick="ElegirTema(1)">Restas de 2 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Verbs</a>
+						<a class="botontema" onclick="ElegirTema(1)">Present simple</a>	
+						<a class="botontema" onclick="ElegirTema(1)">Thir person</a>
 					</div>
 				</div>
 				<br>
@@ -393,9 +412,9 @@
 						<h2>Geografía</h2><img class="iconosasignaturas" src="iconogeografia.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="ElegirTema(1)">Sumas de 2 cifras</a>
-						<a class="botontema" onclick="ElegirTema(1)">Sumas de 3 cifras</a>	
-						<a class="botontema" onclick="ElegirTema(1)">Restas de 2 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Capitales de Europa</a>
+						<a class="botontema" onclick="ElegirTema(1)">Capitales de África</a>	
+						<a class="botontema" onclick="ElegirTema(1)">Provincias de España</a>
 					</div>
 				</div>
 			
@@ -404,21 +423,69 @@
         </div>
         
     </div>
+	<div id="gameplayPadre">
+		<div id="gameplay">
+			<div id="gameplayvidas">
+				<div id="gameplayrival">
+					<h2 id="textovidae">Vida enemigo:</h2>
+					<h2 id="vida">100</h2>
+				</div>
+				<div id="gameplaytu">
+					<h2 id="textovidatu">Mi vida:</h2>
+					<h2 id="tuvida">100</h2>
+				</div>
+			</div>
+			<div id="gameplayimagenes">
+				<img id="imagenenemigo" src="">
+				<img id="tuimagen" src="">  
+			</div>
+			<img id="imagenenemigo" src="">
+			<div id="gameplayinformacion">
+				<h2 id="infoarriba2">---</h2>
+				<h2 id="infoarriba1">---</h2>
+				<h2 id="info">Acierta las preguntas para hacer daño</h2>
+			</div>
+			<div id="Principal">
+			</div>
+			<div id="abajo">
+				<button id="respuesta1" class="respuestas" onclick="Enter1()"></button>
+				<button id="respuesta2" class="respuestas" onclick="Enter2()"></button>
+				<button id="respuesta3" class="respuestas" onclick="Enter3()"></button>
+				<button id="respuesta4" class="respuestas" onclick="Enter4()"></button>       
+			</div>
+        </div>
+	</div>
 	<h7 >Con la colaboración de Alejandro Sanchez</h7>
 	
 	
 	 <script>
 	 document.getElementById("MenuTemas").hidden=true;
 	  document.getElementById("MenuTemas").style.display="none";
+	  document.getElementById("gameplayPadre").hidden=true;
+	  document.getElementById("gameplayPadre").style.display="none";
 	 function Transiciones(numero){
 	 
 		if(numero==1){
+		//pasa del inicio, a la elecion de temas de juego rapido.
 		 document.getElementById("inicio").hidden=true;
 		 document.getElementById("inicio").style.display="none";
 		 document.getElementById("MenuTemas").hidden=false;
 	  document.getElementById("MenuTemas").style.display="flex";
 		}
+		//Pasa de elegir tema, al juego rapido
+		if(numero==2){
+		
+		 document.getElementById("MenuTemas").hidden=true;
+	  document.getElementById("MenuTemas").style.display="none";
+	  document.getElementById("gameplayPadre").hidden=false;
+	  document.getElementById("gameplayPadre").style.display="flex";
+		}
+		
 	 }
+	 function Jugar(numero){
+		Transiciones(2);
+		
+		}
 	 </script>
 </body>
 </html>
