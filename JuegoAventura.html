@@ -102,6 +102,14 @@
 			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
 		
 		}
+		#gameplay{
+		
+			background-color:white;
+	
+			margin-left:100px;
+			margin-right:100px;
+			padding:20px;
+		}
 		#inicio2{
 		display:flex;
 			flex-direction:column;
@@ -151,6 +159,20 @@
 		font-weight: bold;
 		
 		}
+		.respuestas{
+		background-color:white;
+		color:black;
+		border-radius:35px;
+		
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
+		min-width:110px;
+		height:25px;
+		text-align:center;
+		padding:15px;
+		font-family:sans-serif;
+		font-weight: bold;
+		
+		}
 		#imgtitulo1{
 		width:400px;
 		height:220px;
@@ -185,6 +207,9 @@
 		}
 		#gameplayimagenes{
 		 background-image: url("FondoBosque.png");
+		 display: flex;
+			justify-content: space-between;
+			
 		}
 		#gameplayvidas{
 		display:flex;
@@ -198,9 +223,35 @@
 		}
 		#gameplayimagenes{
 		height:230px;
+		width:800px;
 		}
 		#gameplayimagenes img{
 		height:230px;
+		}
+		#tuimagen{
+		
+		margin-left:50px;
+		}
+		#imagenenemigo{
+		margin-right:50px;
+		}
+		#divatrasdetemas{
+		display:flex;
+		}
+		#divatrasdetemas a{
+		color:black;
+		}
+		@media(max-width:1200px){
+		#gameplayimagenes{
+		height:230px;
+		width:600px;
+		}
+		}
+		@media(max-width:1000px){
+		#gameplayimagenes{
+		height:230px;
+		width:400px;
+		}
 		}
 		@media(max-width:700px){
 			header{
@@ -233,6 +284,10 @@
 		#gameplay{
 		width:400px;
 		}
+		#gameplayimagenes{
+		height:230px;
+		width:300px;
+		}
 		
 		.botontema{
 			padding-top:15px;
@@ -261,7 +316,15 @@
 		#gameplayimagenes img{
 		height:150px;
 		}
-			
+		
+			#gameplay{
+		
+			background-color:white;
+	
+			margin-left:50px;
+			margin-right:50px;
+			padding:20px;
+			}
 		}
 		
 		@media(max-width:400px){
@@ -321,6 +384,21 @@
 			.EleccionTemas a{
 				font-size:11px;
 			}
+			#gameplayimagenes{
+		height:230px;
+		width:200px;
+		}
+		#gameplayimagenes img{
+		height:120px;
+		}
+		#gameplay{
+		
+			background-color:white;
+	
+			margin-left:20px;
+			margin-right:20px;
+			padding:20px;
+			}
 		
 		
 		}
@@ -332,6 +410,13 @@
 			}
 			#inicio4{
 		width:300px;
+		}
+		#gameplayimagenes{
+		height:230px;
+		width:160px;
+		}
+		#gameplayimagenes img{
+		height:100px;
 		}
 		
 		}
@@ -387,11 +472,15 @@
   
             <div id="inicio4">
 				 <div class="EleccionTemas1">
+					<div id="divatrasdetemas">
+						<a>Atrás</a>
+						<h2>Elige el tema</h2><br>
+					</div>
 					<div class="diviconos">			 
 						<h2>Historia</h2><img class="iconosasignaturas" src="iconohistoria.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="Jugar(1)">Guerra fria</a>
+						<a class="botontema" onclick="Jugar(0)">Guerra fria</a>
 						<a class="botontema" onclick="ElegirTema(1)">Guerra civil</a>
 						<a class="botontema" onclick="ElegirTema(1)">Revolución francesa</a>
 						<a class="botontema" onclick="ElegirTema(1)">1ª Guerra mundial</a>
@@ -457,17 +546,22 @@
 		<div id="gameplay">
 			<div id="gameplayvidas">
 				<div id="gameplayrival">
+				<h2 id="textovidatu">Mi vida:</h2>
+					<h2 id="tuvida">100</h2>
+					
+				</div>
+				<div id="gameplaytu">
 					<h2 id="textovidae">Vida enemigo:</h2>
 					<h2 id="vida">100</h2>
 				</div>
-				<div id="gameplaytu">
-					<h2 id="textovidatu">Mi vida:</h2>
-					<h2 id="tuvida">100</h2>
-				</div>
 			</div>
 			<div id="gameplayimagenes">
-				<img id="imagenenemigo" src="./prueba1.png">
-				<img id="tuimagen"  src="./prueba1.png">  
+				<div>
+				<img id="tuimagen" src="./prueba1.png">
+				</div>
+				<div>
+				<img id="imagenenemigo"  src="./prueba1.png">  
+				</div>
 			</div>
 			<img id="imagenenemigo" src="">
 			<div id="gameplayinformacion">
@@ -478,10 +572,10 @@
 			<div id="Principal">
 			</div>
 			<div id="abajo">
-				<button id="respuesta1" class="respuestas" onclick="Enter1()"></button>
-				<button id="respuesta2" class="respuestas" onclick="Enter2()"></button>
-				<button id="respuesta3" class="respuestas" onclick="Enter3()"></button>
-				<button id="respuesta4" class="respuestas" onclick="Enter4()"></button>       
+				<button id="respuesta1" class="respuestas" onclick="Enter(1)"></button>
+				<button id="respuesta2" class="respuestas" onclick="Enter(2)"></button>
+				<button id="respuesta3" class="respuestas" onclick="Enter(3)"></button>
+				<button id="respuesta4" class="respuestas" onclick="Enter(4)"></button>       
 			</div>
         </div>
 	</div>
@@ -493,7 +587,25 @@
 	  document.getElementById("MenuTemas").style.display="none";
 	  document.getElementById("gameplayPadre").hidden=true;
 	  document.getElementById("gameplayPadre").style.display="none";
-	  
+		
+		Vida=100;
+        TuVida=100;
+		Victorias=0;
+	    MiNombre="";
+        Dialogo=0;
+		Oro=0;
+		AtaqueRival=10;
+		MiAtaque=10;
+        CuentaLadron=0;
+		PotenciadorMiAtaque=0;
+		CuentaPotenciadorMiAtaque=0;
+		NivelEspada=0;
+		NivelDefensa=0;
+		TipoMonstruo=0;
+		TipoJugador=0;
+		VidaMaxima=100;
+		TemaElegido=1;
+		
 	  
 	  //Preguntas Historia Nivel 2, Guerra fria
         const id20His1 = ["¿En que año acabó la guerra fria?","1991","1990","1989","1971",""]; //Pregunta con id 01
@@ -518,6 +630,10 @@
 		const id20His20 = ["¿Qué líder cubano se opuso al régimen de Batista en 1959?","Fidel Castro","Raúl Castro","Mao Zedong","Che Guevara",""]; //Pregunta con id 01
 		const id20His21 = ["¿Cuál define mejor la naturaleza de la Guerra Fría?","Fue una confrontación diplomática, ideológica, económica y estratégica entre Estados Unidos y la Unión Soviética sin una guerra directa general entre ambas potencias.","Fue una alianza económica entre las potencias vencedoras para reconstruir conjuntamente la Unión Soviética.","Fue un conflicto colonial entre Francia y Alemania por el control político de Europa oriental.","Fue una guerra exclusivamente militar entre Estados Unidos y la Unión Soviética desarrollada principalmente en Europa occidental.",""]; //Pregunta con id 01
 		
+	    const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21]; //Id de las preguntas, Arrays donde se guardan los Arrays
+
+	 //Array de arrays de los temas
+		const Temas = [IdesHisTema20];
 	 function Transiciones(numero){
 	 
 		if(numero==1){
@@ -539,7 +655,145 @@
 	 }
 	 function Jugar(numero){
 		Transiciones(2);
+		TemaElegido=numero;
+		document.getElementById("tuimagen").src="./prueba1.png";               
+		document.getElementById("vida").innerHTML=Vida;
+        document.getElementById("tuvida").innerHTML=TuVida;
+        Info="Acierta las preguntas para hacer daño";
+        document.getElementById("info").innerHTML=Info;
+        console.log(Vida);
+        NumeroAleatorio = Math.floor(Math.random()*Temas[TemaElegido].length); //Numero Aleatorio para la pregunta
 		
+        GuardarId = Temas[TemaElegido][NumeroAleatorio];
+        //GuardarId = Ides[0];
+		
+		
+        console.log("Tema elegido"+TemaElegido);
+        console.log(GuardarId[0]);
+        document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
+        RespuestaCorrecta=GuardarId[1];
+        CopiaArray=GuardarId.slice(1,5);
+        ReordenarRespuesta = CopiaArray;
+       
+        ReordenarRespuesta.sort();
+        console.log(ReordenarRespuesta);
+        
+        //ReordenarRespuesta = ReordenarRespuesta.sort();
+        document.getElementById("respuesta1").innerHTML=ReordenarRespuesta[0];
+        document.getElementById("respuesta2").innerHTML=ReordenarRespuesta[1];
+        document.getElementById("respuesta3").innerHTML=ReordenarRespuesta[2];
+        document.getElementById("respuesta4").innerHTML=ReordenarRespuesta[3];
+
+        
+		
+		}
+		
+		
+		
+		function Enter(numero){
+            
+            
+            if(RespuestaCorrecta==document.getElementById("respuesta"+numero).innerHTML)
+            {
+			if(Vida<=10){
+             
+            }else{
+               Xinfo="Está bien, Has hecho +10 de daño al rival";
+			   Sinfo="green";
+			ActualizarInfo(Xinfo,Sinfo);
+                console.log("Está bien, Has hecho +10 de daño al rival");
+				Ataque();
+                recargar();
+				}
+            }
+            else{
+                console.log(document.getElementById("respuesta"+numero).innerHTML);
+                  Xinfo="Está mal";
+				Sinfo="red";
+			ActualizarInfo(Xinfo,Sinfo);
+                console.log("Está mal");
+                TuVida=TuVida-AtaqueRival;
+                document.getElementById("tuvida").innerHTML=TuVida;
+				if(TuVida<=0){
+                document.getElementById("gameplay").hidden=true;
+                document.getElementById("menujuego").hidden=false;
+				}
+                
+            }
+        }
+		
+		function recargar(){
+			
+			const Temas = [IdesHisTema20,];
+           //Array de arrays de los temas
+		
+		
+			NumeroAleatorio = Math.floor(Math.random()*Temas[TemaElegido].length); //Numero Aleatorio para la pregunta
+		
+			GuardarId = Temas[TemaElegido][NumeroAleatorio];
+			//GuardarId = Ides[0];
+
+   
+        
+            console.log(GuardarId[0]);
+            console.log(GuardarId[5]);
+            document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
+            RespuestaCorrecta=GuardarId[1];
+           
+            CopiaArray=GuardarId.slice(1,5);
+        ReordenarRespuesta = [];
+        console.log(ReordenarRespuesta)
+           // ReordenarRespuesta.sort();
+
+           for ( z=0;ReordenarRespuesta.length<=3;z++){
+            let X=1 ;
+            NumeroAle2=Math.floor(Math.random()*CopiaArray.length);
+            console.log(NumeroAle2)
+            for(r=0;r<=ReordenarRespuesta.length;r++){       
+                if(ReordenarRespuesta[r]==CopiaArray[NumeroAle2]){
+                    X=X+1;
+                }
+            }
+            console.log(X+"X");
+            if (X==1){
+                ReordenarRespuesta[z]=CopiaArray[NumeroAle2];
+                
+            }else{
+                z=z-1;
+            }
+
+           }
+      
+        console.log(ReordenarRespuesta);
+            //console.log(GuardarId[0]);
+            document.getElementById("respuesta1").innerHTML=ReordenarRespuesta[0];
+            document.getElementById("respuesta2").innerHTML=ReordenarRespuesta[1];
+            document.getElementById("respuesta3").innerHTML=ReordenarRespuesta[2];
+            document.getElementById("respuesta4").innerHTML=ReordenarRespuesta[3];
+            //document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
+            
+            
+            document.getElementById("vida").innerHTML=Vida;
+        }
+		
+		
+		function Ataque(){
+			if(CuentaPotenciadorMiAtaque>=1){
+				Vida=Vida-MiAtaque*PotenciadorMiAtaque;
+				CuentaPotenciadorMiAtaque=CuentaPotenciadorMiAtaque-1;
+			}else{
+				Vida=Vida-MiAtaque;
+				PotenciadorMiAtaque=0;
+			}
+		}
+		function ActualizarInfo(Xinfo,Sinfo){
+			document.getElementById("infoarriba2").innerHTML=document.getElementById("infoarriba1").innerHTML;
+			document.getElementById("infoarriba1").innerHTML=document.getElementById("info").innerHTML;
+			document.getElementById("info").innerHTML=Xinfo;
+			document.getElementById("infoarriba2").style.color=document.getElementById("infoarriba1").style.color;
+			document.getElementById("infoarriba1").style.color=document.getElementById("info").style.color;
+			document.getElementById("info").style.color=Sinfo;
+			
 		}
 	 </script>
 </body>
