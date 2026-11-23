@@ -279,6 +279,16 @@
 		#Principal{
 			font-size:10px;
 			}
+			#infoarriba1{
+	
+		 opacity: 0.66;
+		 
+		}
+		#infoarriba2{
+	
+		 opacity: 0.33;
+		 
+		}
 		@media(max-width:1200px){
 		#gameplayimagenes{
 		height:230px;
@@ -464,8 +474,9 @@
 				font-size:11px;
 			}
 			#gameplayimagenes{
-		height:230px;
+		height:115px;
 		width:310px;
+		background-image: url("FondoBosque_3.png");
 		}
 		#gameplayimagenes img{
 		height:120px;
@@ -486,6 +497,7 @@
 			#Principal{
 			font-size:8px;
 			}
+			
 		
 		}
 		@media(max-width:350px){
@@ -773,7 +785,8 @@
 	 function Jugar(numero){
 		Transiciones(2);
 		TemaElegido=numero;
-		document.getElementById("tuimagen").src="./prueba1.png";               
+		document.getElementById("tuimagen").src="./jugador2_2.png";          
+	document.getElementById("imagenenemigo").src="./Enemigo6.png";       		
 		document.getElementById("vida").innerHTML=Vida;
         document.getElementById("tuvida").innerHTML=TuVida;
         Info="Acierta las preguntas para hacer daño";
