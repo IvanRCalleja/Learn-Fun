@@ -398,7 +398,7 @@
 		
 			}
 			#abajo a{
-			font-size:13px;
+			font-size:15px;
 			margin:2px;
 			}
 		}
@@ -461,7 +461,7 @@
 			margin-top:10px;
 			}
 			#abajo a{
-			font-size:11px;
+			font-size:13px;
 			}
 				h2{
 			font-size:18px;
@@ -616,7 +616,7 @@
 						<h2>Matematicas</h2><img class="iconosasignaturas" src="iconomates.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="ElegirTema(1)">Sumas de 2 cifras</a>
+						<a class="botontema" onclick="Jugar(1)">Sumas de 2 cifras</a>
 						<a class="botontema" onclick="ElegirTema(1)">Sumas de 3 cifras</a>	
 						<a class="botontema" onclick="ElegirTema(1)">Restas de 2 cifras</a>
 						<a class="botontema" onclick="ElegirTema(1)">Restas de 3 cifras</a>
@@ -728,6 +728,23 @@
 		VidaMaxima=100;
 		TemaElegido=1;
 		
+		 //Preguntas Matematicas Nivel 1, Sumas 2 cifras
+        const id1Mat1 = ["¿Cuanto es 36+36?","72","66","366","84",""]; //Pregunta con id 01
+        const id1Mat2 = ["¿Cuanto es 76+89?","165","123","159","160",""]; //Pregunta con id 01
+        const id1Mat3 = ["¿Cuanto es 20+20?","40","30","22","50",""]; //Pregunta con id 01
+        const id1Mat4 = ["¿Cuanto es 99+11?","110","111","100","101",""]; //Pregunta con id 01
+        const id1Mat5 = ["¿Cuanto es 45+17?","62","57","69","52",""]; //Pregunta con id 01
+        const id1Mat6 = ["¿Cuanto es 16+5+12?","33","26","31","42",""]; //Pregunta con id 01
+        const id1Mat7 = ["¿Cuanto es 55+25?","80","65","70","75",""]; //Pregunta con id 01
+        const id1Mat8 = ["¿Cuanto es 3+3+17?","23","18","19","21",""]; //Pregunta con id 01
+		const id1Mat9 = ["¿Cuanto es 51+4?","55","54","57","56",""]; //Pregunta con id 01
+		const id1Mat10 = ["¿Cuanto es 13+31+42?","86","73","91","82",""]; //Pregunta con id 01
+		const id1Mat11 = ["¿Cuanto es 32+50+15?","97","92","95","99",""]; //Pregunta con id 01
+		const id1Mat12 = ["¿Cuanto es 34+56?","90","84","86","88",""]; //Pregunta con id 01
+		const id1Mat13 = ["¿Cuanto es 60+42?","102","92","82","104",""]; //Pregunta con id 01
+		
+		const  IdesMatTema1 = [id1Mat1,id1Mat2,id1Mat3,id1Mat4,id1Mat5,id1Mat6,id1Mat7,id1Mat8,id1Mat9,id1Mat10,id1Mat11,id1Mat12,id1Mat13]; //Id de las preguntas, Arrays donde se guardan los Arrays
+		
 	  
 	  //Preguntas Historia Nivel 2, Guerra fria
         const id20His1 = ["¿En que año acabó la guerra fria?","1991","1990","1989","1971",""]; //Pregunta con id 01
@@ -755,7 +772,7 @@
 	    const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21]; //Id de las preguntas, Arrays donde se guardan los Arrays
 
 	 //Array de arrays de los temas
-		const Temas = [IdesHisTema20];
+		const Temas = [IdesHisTema20,IdesMatTema1];
 	 function Transiciones(numero){
 	 
 		if(numero==1){
@@ -785,7 +802,7 @@
 	 function Jugar(numero){
 		Transiciones(2);
 		TemaElegido=numero;
-		document.getElementById("tuimagen").src="./jugador2_2.png";          
+		document.getElementById("tuimagen").src="./Jugador2_2.png";          
 	document.getElementById("imagenenemigo").src="./Enemigo6.png";       		
 		document.getElementById("vida").innerHTML=Vida;
         document.getElementById("tuvida").innerHTML=TuVida;
@@ -854,7 +871,7 @@
 		
 		function recargar(){
 			
-			const Temas = [IdesHisTema20,];
+			const Temas = [IdesHisTema20,IdesMatTema1];
            //Array de arrays de los temas
 		
 		
