@@ -159,11 +159,11 @@
 		font-weight: bold;
 		
 		}
-		.respuestas{
-		background-color:white;
+		#divatrasdetemas a{
+			background-color:white;
 		color:black;
 		border-radius:35px;
-		
+		border-width:4px gray;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
 		min-width:110px;
 		height:25px;
@@ -171,6 +171,28 @@
 		padding:15px;
 		font-family:sans-serif;
 		font-weight: bold;
+		
+		}
+		#divatrasdetemas a:hover{
+		background-color:yellow;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		#divatrasdetemas a:activate{
+		background-color:yellow;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		.respuestas{
+		background-color:white;
+		color:black;
+		border-radius:35px;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
+		min-width:110px;
+		height:25px;
+		text-align:center;
+		padding:15px;
+		font-family:sans-serif;
+		font-weight: bold;
+		display: inline-block;
 		
 		}
 		#imgtitulo1{
@@ -480,8 +502,8 @@
             <div id="inicio4">
 				 <div class="EleccionTemas1">
 					<div id="divatrasdetemas">
-						<a>Atrás</a>
-						<h2>Elige el tema</h2><br>
+						<a onclick="Transiciones(3)">Atrás </a>
+						<h2> Elige el tema</h2><br><br><br>
 					</div>
 					<div class="diviconos">			 
 						<h2>Historia</h2><img class="iconosasignaturas" src="iconohistoria.png"></img>
@@ -579,14 +601,15 @@
 			<div id="Principal">
 			</div>
 			<div id="abajo">
-				<button id="respuesta1" class="respuestas" onclick="Enter(1)"></button>
-				<button id="respuesta2" class="respuestas" onclick="Enter(2)"></button>
-				<button id="respuesta3" class="respuestas" onclick="Enter(3)"></button>
-				<button id="respuesta4" class="respuestas" onclick="Enter(4)"></button>       
+				<a id="respuesta1" class="respuestas" onclick="Enter(1)"></a>
+				<a id="respuesta2" class="respuestas" onclick="Enter(2)"></a>
+				<a id="respuesta3" class="respuestas" onclick="Enter(3)"></a>
+				<a id="respuesta4" class="respuestas" onclick="Enter(4)"></a>       
 			</div>
         </div>
 	</div>
 	<h7 >Con la colaboración de Alejandro Sanchez</h7>
+	<p>Beta 1.0</p>
 	
 	
 	 <script>
@@ -657,6 +680,13 @@
 	  document.getElementById("MenuTemas").style.display="none";
 	  document.getElementById("gameplayPadre").hidden=false;
 	  document.getElementById("gameplayPadre").style.display="flex";
+		}
+		if(numero==3){
+		//pasa de la elecion de temas de juego rapido a inicio.
+		 document.getElementById("inicio").hidden=false;
+		 document.getElementById("inicio").style.display="flex";
+		 document.getElementById("MenuTemas").hidden=true;
+	  document.getElementById("MenuTemas").style.display="none";
 		}
 		
 	 }
