@@ -818,6 +818,7 @@
 		<p id="ResultadosResumen"></p>
 		<p id="Fallos">Fallos</p>
 		<p id="Aciertos">Fallos</p>
+		<p id="PuntosRapidos">Fallos</p>
 		<a  href="javascript:Transiciones(5);" onclick="Transiciones(5)">Atrás </a>
 		<div>
 	</div>
@@ -852,6 +853,7 @@
 		TemaElegido=1;
 		fallos=0;
 		aciertos=0;
+		puntosrapidos=0;
 		
 		 //Preguntas Matematicas Nivel 1, Sumas 2 cifras
         const id1Mat1 = ["¿Cuanto es 36+36?","72","66","366","84",""]; //Pregunta con id 01
@@ -961,6 +963,7 @@
 		TemaElegido=1;
 		fallos=0;
 		aciertos=0;
+		puntosrapidos=0;
 		
 		document.getElementById("infoarriba2").innerHTML="---";
 		document.getElementById("infoarriba1").innerHTML="---";
@@ -1005,13 +1008,15 @@
 		
 		function Enter(numero){
             
-            
+            document.activeElement?.blur();
             if(RespuestaCorrecta==document.getElementById("respuesta"+numero).innerHTML)
             {
 			if(Vida<=10){
+			puntosrapidos=puntosrapidos+10;
 			aciertos=aciertos+1;
 			document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
 			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+			document.getElementById("PuntosRapidos").innerHTML="<p>Puntuación: "+ puntosrapidos +"</p>";
 			document.getElementById("ResultadosResumen").innerHTML="<p>¡Has derrotado al rival!</p>";
 			
 			Transiciones(4);
@@ -1022,6 +1027,7 @@
 			ActualizarInfo(Xinfo,Sinfo);
                 console.log("Está bien, Has hecho +10 de daño al rival");
 				aciertos=aciertos+1;
+				puntosrapidos=puntosrapidos+10;
 				Ataque();
                 recargar();
 				}
@@ -1030,6 +1036,7 @@
                 console.log(document.getElementById("respuesta"+numero).innerHTML);
                   Xinfo="Está mal, -10 de vida";
 				  fallos=fallos+1;
+				  puntosrapidos=puntosrapidos-3.3;
 				Sinfo="red";
 			ActualizarInfo(Xinfo,Sinfo);
                 console.log("Está mal");
@@ -1038,6 +1045,10 @@
 				if(TuVida<=0){
 				document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
 			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+					if(puntosrapidos<0){
+						puntosrapidos=0;
+					}
+			document.getElementById("PuntosRapidos").innerHTML="<p>Puntuación: "+ puntosrapidos +"</p>";
 			document.getElementById("ResultadosResumen").innerHTML="<p>¡Te ha derrotado el rival! Tendrás que prepararte mejor la próxima vez.</p>";
                 Transiciones(4);
 				}
