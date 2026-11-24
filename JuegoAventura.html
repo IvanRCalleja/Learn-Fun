@@ -34,7 +34,7 @@
 		}
 		
 		nav a:hover{
-		color:yellow;
+		color:#DBDBDB;
 		}
 		
 		header{
@@ -100,6 +100,7 @@
 			border-radius:10px;
 			
 			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
+			min-height:600px;
 		
 		}
 		#gameplay{
@@ -130,26 +131,26 @@
 		font-weight: bold;
 		}
 		.botonjugar:hover{
-		background-color:yellow;
+		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
 		.botonjugar:activate{
-		background-color:yellow;
+		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
 		.botontema:hover{
-		background-color:yellow;
+		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
 		.botontema:activate{
-		background-color:yellow;
+		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
 		.botontema{
 		background-color:white;
 		color:black;
 		border-radius:35px;
-		border-width:4px gray;
+		border: 1px solid #D9D9D9;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
 		min-width:110px;
 		height:25px;
@@ -174,22 +175,22 @@
 		
 		}
 		#divatrasdetemas a:hover{
-		background-color:yellow;
+		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
 		#divatrasdetemas a:activate{
-		background-color:yellow;
+		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
 		#abajo a{
-		color:gray;
+		color:#636363;
 		}
 		#abajo a:hover{
-		background-color:yellow;
+		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
 		#abajo a:activate{
-		background-color:yellow;
+		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
 		}
 		.respuestas{
@@ -197,6 +198,7 @@
 		color:black;
 		border-radius:35px;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
+		border: 1px solid #D9D9D9;
 		min-width:110px;
 		height:25px;
 		text-align:center;
@@ -204,6 +206,7 @@
 		font-family:sans-serif;
 		font-weight: bold;
 		display: inline-block;
+		margin-top:2px;
 		
 		}
 		#imgtitulo1{
@@ -297,7 +300,7 @@
 			}
 		#Principal{
 			font-size:10px;
-			color:gray;
+			color:#4D4D4D;
 			}
 			#infoarriba1{
 	
@@ -615,13 +618,13 @@
 					<div id="divatrasdetemas">
 						
 						<h2> Elige el tema</h2>
-						<a onclick="Transiciones(3)">Atrás </a><br><br><br>
+						<a  href="javascript:Transiciones(3);" onclick="Transiciones(3)">Atrás </a><br><br><br>
 					</div>
 					<div class="diviconos">			 
 						<h2>Historia</h2><img class="iconosasignaturas" src="iconohistoria.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="Jugar(0)">Guerra fria</a>
+						<a class="botontema" href="javascript:Jugar(0);" onclick="Jugar(0)">Guerra fria</a>
 						<a class="botontema" onclick="ElegirTema(1)">Guerra civil</a>
 						<a class="botontema" onclick="ElegirTema(1)">Revolución francesa</a>
 						<a class="botontema" onclick="ElegirTema(1)">1ª Guerra mundial</a>
@@ -636,7 +639,7 @@
 						<h2>Matematicas</h2><img class="iconosasignaturas" src="iconomates.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="Jugar(1)">Sumas de 2 cifras</a>
+						<a class="botontema"  href="javascript:Jugar(1);" onclick="Jugar(1)">Sumas de 2 cifras</a>
 						<a class="botontema" onclick="ElegirTema(1)">Sumas de 3 cifras</a>	
 						<a class="botontema" onclick="ElegirTema(1)">Restas de 2 cifras</a>
 						<a class="botontema" onclick="ElegirTema(1)">Restas de 3 cifras</a>
@@ -713,10 +716,10 @@
 			<div id="Principal">
 			</div>
 			<div id="abajo">
-				<a id="respuesta1" class="respuestas" onclick="Enter(1)"></a>
-				<a id="respuesta2" class="respuestas" onclick="Enter(2)"></a>
-				<a id="respuesta3" class="respuestas" onclick="Enter(3)"></a>
-				<a id="respuesta4" class="respuestas" onclick="Enter(4)"></a>       
+				<a href="javascript:Enter(1);" id="respuesta1" class="respuestas" ></a>
+				<a href="javascript:Enter(2);" id="respuesta2" class="respuestas" ></a>
+				<a href="javascript:Enter(3);" id="respuesta3" class="respuestas" ></a>
+				<a href="javascript:Enter(4);" id="respuesta4" class="respuestas" ></a>       
 			</div>
         </div>
 	</div>
