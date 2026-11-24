@@ -103,6 +103,7 @@
 			min-height:600px;
 		
 		}
+		
 		#gameplay{
 		
 			background-color:white;
@@ -110,6 +111,41 @@
 			margin-left:100px;
 			margin-right:100px;
 			
+		}
+		#resultadosRapido{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+			background-color:white;
+			margin:20px;
+			margin-left:200px;
+			margin-right:200px;
+			padding:20px;
+			border-radius:10px;
+			
+			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
+			min-height:600px;
+		
+		}
+		#resultadosRapido2{
+		
+			background-color:white;
+			max-width:800px;
+			margin-left:100px;
+			margin-right:100px;
+			
+		}
+		#resultadosRapido a{
+		background-color:white;
+		color:black;
+		border-radius:35px;
+		border-width:0px;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.15);
+	
+		text-align:center;
+	
+		font-family:sans-serif;
+		font-weight: bold;
 		}
 		#inicio2{
 		display:flex;
@@ -323,6 +359,11 @@
 			margin-left:150px;
 			
 			}
+			#resultadosRapido{
+			margin-right:150px;
+			margin-left:150px;
+			
+			}
 		}
 		@media(max-width:1000px){
 		#gameplayimagenes{
@@ -330,6 +371,11 @@
 		width:500px;
 		}
 		#gameplayPadre{
+			margin-right:100px;
+			margin-left:100px;
+			
+			}
+			#resultadosRapido{
 			margin-right:100px;
 			margin-left:100px;
 			
@@ -352,6 +398,11 @@
 			
 			}
 			#gameplayPadre{
+			margin-right:30px;
+			margin-left:30px;
+			
+			}
+			#resultadosRapido{
 			margin-right:30px;
 			margin-left:30px;
 			
@@ -410,6 +461,17 @@
 		}
 		
 			#gameplay{
+		
+			background-color:white;
+	
+			margin-left:100px;
+			margin-right:100px;
+			padding:0px;
+			
+			width:400px;
+		
+			}
+			#resultadosRapido2{
 		
 			background-color:white;
 	
@@ -517,6 +579,19 @@
 			margin-left:10px;
 			
 			}
+			#resultadosRapido2{
+		
+			background-color:white;
+	
+			width:310px;
+			padding:0px;
+			}
+		
+		#resultadosRapido{
+			margin-right:10px;
+			margin-left:10px;
+			
+			}
 			#Principal{
 			font-size:8px;
 			}
@@ -529,6 +604,13 @@
 		width:280px;
 		}
 		#gameplay{
+		
+			background-color:white;
+	
+			width:280px;
+			padding:0px;
+			}
+			#resultadosRapido2{
 		
 			background-color:white;
 	
@@ -555,6 +637,13 @@
 		height:100px;
 		}
 		#gameplay{
+		
+			background-color:white;
+	
+			width:160px;
+			padding:20px;
+			}
+			#resultadosRapido2{
 		
 			background-color:white;
 	
@@ -723,6 +812,14 @@
 			</div>
         </div>
 	</div>
+	<div id="resultadosRapido">
+		<div id="resultadosRapido2">
+		<h1>Resultados</h1>
+		<p id="Fallos">Fallos</p>
+		<p id="Aciertos">Fallos</p>
+		<a  href="javascript:Transiciones(5);" onclick="Transiciones(5)">Atrás </a>
+		<div>
+	</div>
 	<h7 >Con la colaboración de Alejandro Sanchez</h7>
 	<p>Beta 1.0</p>
 	
@@ -732,6 +829,8 @@
 	  document.getElementById("MenuTemas").style.display="none";
 	  document.getElementById("gameplayPadre").hidden=true;
 	  document.getElementById("gameplayPadre").style.display="none";
+	  document.getElementById("resultadosRapido").hidden=true;
+	  document.getElementById("resultadosRapido").style.display="none";
 		
 		Vida=100;
         TuVida=100;
@@ -750,6 +849,8 @@
 		TipoJugador=0;
 		VidaMaxima=100;
 		TemaElegido=1;
+		fallos=0;
+		aciertos=0;
 		
 		 //Preguntas Matematicas Nivel 1, Sumas 2 cifras
         const id1Mat1 = ["¿Cuanto es 36+36?","72","66","366","84",""]; //Pregunta con id 01
@@ -820,9 +921,48 @@
 		 document.getElementById("MenuTemas").hidden=true;
 	  document.getElementById("MenuTemas").style.display="none";
 		}
+		if(numero==4){
+		//pasa de la elecion de temas de juego rapido a inicio.
+		 document.getElementById("gameplayPadre").hidden=true;
+		 document.getElementById("gameplayPadre").style.display="none";
+		 document.getElementById("resultadosRapido").hidden=false;
+	  document.getElementById("resultadosRapido").style.display="flex";
+		}
+		if(numero==5){
+		//pasa de la elecion de temas de juego rapido a inicio.
+		 document.getElementById("resultadosRapido").hidden=true;
+		 document.getElementById("resultadosRapido").style.display="none";
+		 document.getElementById("inicio").hidden=false;
+	  document.getElementById("inicio").style.display="flex";
+		}
+		
 		
 	 }
 	 function Jugar(numero){
+	 Vida=100;
+        TuVida=100;
+		Victorias=0;
+	    MiNombre="";
+        Dialogo=0;
+		Oro=0;
+		AtaqueRival=10;
+		MiAtaque=10;
+        CuentaLadron=0;
+		PotenciadorMiAtaque=0;
+		CuentaPotenciadorMiAtaque=0;
+		NivelEspada=0;
+		NivelDefensa=0;
+		TipoMonstruo=0;
+		TipoJugador=0;
+		VidaMaxima=100;
+		TemaElegido=1;
+		fallos=0;
+		aciertos=0;
+		
+		document.getElementById("infoarriba2").innerHTML="---";
+		document.getElementById("infoarriba1").innerHTML="---";
+		document.getElementById("info").innerHTML="Responde las preguntas para derrotar al rival";
+			
 		Transiciones(2);
 		TemaElegido=numero;
 		document.getElementById("tuimagen").src="./Jugador2_2.png";          
@@ -866,27 +1006,35 @@
             if(RespuestaCorrecta==document.getElementById("respuesta"+numero).innerHTML)
             {
 			if(Vida<=10){
+			aciertos=aciertos+1;
+			document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
+			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+			
+			Transiciones(4);
              
             }else{
                Xinfo="Está bien, Has hecho +10 de daño al rival";
 			   Sinfo="green";
 			ActualizarInfo(Xinfo,Sinfo);
                 console.log("Está bien, Has hecho +10 de daño al rival");
+				aciertos=aciertos+1;
 				Ataque();
                 recargar();
 				}
             }
             else{
                 console.log(document.getElementById("respuesta"+numero).innerHTML);
-                  Xinfo="Está mal";
+                  Xinfo="Está mal, -10 de vida";
+				  fallos=fallos+1;
 				Sinfo="red";
 			ActualizarInfo(Xinfo,Sinfo);
                 console.log("Está mal");
                 TuVida=TuVida-AtaqueRival;
                 document.getElementById("tuvida").innerHTML=TuVida;
 				if(TuVida<=0){
-                document.getElementById("gameplay").hidden=true;
-                document.getElementById("menujuego").hidden=false;
+				document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
+			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+                Transiciones(4);
 				}
                 
             }
