@@ -815,6 +815,7 @@
 	<div id="resultadosRapido">
 		<div id="resultadosRapido2">
 		<h1>Resultados</h1>
+		<p id="ResultadosResumen"></p>
 		<p id="Fallos">Fallos</p>
 		<p id="Aciertos">Fallos</p>
 		<a  href="javascript:Transiciones(5);" onclick="Transiciones(5)">Atrás </a>
@@ -892,8 +893,10 @@
 		const id20His19 = ["¿Qué acción tomaron EEUU y sus aliados en Berlín en 1948?","Unieron sus sectores en Berlín","Desplegaron tropas en Berlín","Establecieron un gobierno comunista","Iniciaron la Guerra Civil",""]; //Pregunta con id 01
 		const id20His20 = ["¿Qué líder cubano se opuso al régimen de Batista en 1959?","Fidel Castro","Raúl Castro","Mao Zedong","Che Guevara",""]; //Pregunta con id 01
 		const id20His21 = ["¿Cuál define mejor la naturaleza de la Guerra Fría?","Fue una confrontación diplomática, ideológica, económica y estratégica entre Estados Unidos y la Unión Soviética sin una guerra directa general entre ambas potencias.","Fue una alianza económica entre las potencias vencedoras para reconstruir conjuntamente la Unión Soviética.","Fue un conflicto colonial entre Francia y Alemania por el control político de Europa oriental.","Fue una guerra exclusivamente militar entre Estados Unidos y la Unión Soviética desarrollada principalmente en Europa occidental.",""]; //Pregunta con id 01
-		
-	    const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21]; //Id de las preguntas, Arrays donde se guardan los Arrays
+		const id20His22 = ["¿Qué fue el Plan Marshall?","Un programa de ayuda económica de EE. UU. para reconstruir Europa occidental tras la Segunda Guerra Mundial y frenar la expansión comunista.","Fue una alianza económica entre las potencias vencedoras para reconstruir conjuntamente la Unión Soviética.","Fue un conflicto colonial entre Francia y Alemania por el control político de Europa oriental.","Fue una guerra exclusivamente militar entre Estados Unidos y la Unión Soviética desarrollada principalmente en Europa occidental.",""]; //Pregunta con id 01
+
+
+	    const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21,id20His22]; //Id de las preguntas, Arrays donde se guardan los Arrays
 
 	 //Array de arrays de los temas
 		const Temas = [IdesHisTema20,IdesMatTema1];
@@ -1009,6 +1012,7 @@
 			aciertos=aciertos+1;
 			document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
 			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+			document.getElementById("ResultadosResumen").innerHTML="<p>¡Has derrotado al rival!</p>";
 			
 			Transiciones(4);
              
@@ -1034,6 +1038,7 @@
 				if(TuVida<=0){
 				document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
 			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+			document.getElementById("ResultadosResumen").innerHTML="<p>¡Te ha derrotado el rival! Tendrás que prepararte mejor la próxima vez.</p>";
                 Transiciones(4);
 				}
                 
