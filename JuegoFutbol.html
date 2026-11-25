@@ -278,7 +278,7 @@
 		padding-bottom:15px;
 		}
 		#gameplayimagenes{
-		 background-image: url("FondoBosque.png");
+		 background-image: url("Fondo_3.png");
 		 display: flex;
 			justify-content: space-between;
 			
@@ -316,7 +316,7 @@
 		-webkit-text-stroke: 1px red;
 		}
 		#gameplaytu{
-		-webkit-text-stroke: 1px green;
+		-webkit-text-stroke: 1px ;
 		}
 		#divatrasdetemas{
 		display:flex;
@@ -330,7 +330,7 @@
 		 border-bottom: 2px solid #CFCFCF;
 		}
 		#gameplayinformacion h2{
-			font-size:13px;
+			font-size:15px;
 			margin-bottom:-2px;
 			margin-top:-2px;
 			}
@@ -347,6 +347,11 @@
 	
 		 opacity: 0.33;
 		 
+		}
+		.clasemarcador{
+		
+		color:white;
+		
 		}
 		@media(max-width:1200px){
 		#gameplayimagenes{
@@ -435,7 +440,7 @@
 			font-size:10px;
 			}
 			#gameplayinformacion h2{
-			font-size:10px;
+			font-size:13px;
 			}
 			.EleccionTemas a{
 				font-size:13px;
@@ -522,7 +527,7 @@
 			padding:0px;
 			}
 			#gameplayinformacion h2{
-			font-size:10px;
+			font-size:12px;
 			}
 			
 			.EleccionTemas a{
@@ -779,19 +784,22 @@
 		<div id="gameplay">
 			<div id="gameplayvidas">
 				<div id="gameplayrival">
-				<h2 id="textovidatu">Mi vida:</h2>
-					<h2 id="tuvida">100</h2>
+				<h2 id="textovidatu">Tiempo:</h2>
+					<h2 id="tuvida"></h2>
 					
 				</div>
 				<div id="gameplaytu">
-					<h2 id="textovidae">Vida enemigo:</h2>
-					<h2 id="vida">100</h2>
+				<h2 id="textovidae"></h2>
+					<h2 id="vida"></h2>
 				</div>
 			</div>
 			<div id="gameplayimagenes">
 				<div>
 				<img id="tuimagen" src="./prueba1.png">
 				</div>
+				<h1 id="marcadorlocal" class="clasemarcador">0</h1>
+				<h1 class="clasemarcador">-</h1>
+				<h1 id="marcadorrival" class="clasemarcador">0</h1>
 				<div>
 				<img id="imagenenemigo"  src="./prueba1.png">  
 				</div>
@@ -837,6 +845,8 @@
 		MarcadorLocal=0;
 		MarcadorRival=0;
 		TiempoRapido=0;
+		Posedor=0;
+		SitioCampo=0;
 		
 		
 		Vida=100;
@@ -915,8 +925,12 @@
 		const id3geo7 = ["¿Cual es la capital de Grecia?","Atenas","Skopie","Tirana","Ciudad del Vaticano"]; //Pregunta con id 11
 		const id3geo8 = ["¿Cual es la capital de Macedonia del norte?","Skopie","Pristina","Tirana","San marino"]; //Pregunta con id 11
 		const id3geo9 = ["¿Cual es la capital de Estonia?","Tallín","Luxemburgo","Helsinki","Riga"]; //Pregunta con id 11
+		const id3geo10 = ["¿Cual es la capital de Polonia?","Varsovia","Praga","Kiev","Atenas"]; //Pregunta con id 11
+		const id3geo11 = ["¿Cual es la capital de Bélgica?","Bruselas","Brujas","Ámsterdam","Chisinau"]; //Pregunta con id 11
+		const id3geo12 = ["¿Cual es la capital de Dinamarca?","Copenhague","Estocolmo","Oslo","Budapest"]; //Pregunta con id 11
+		const id3geo13 = ["¿Cual es la capital de San Marino?","San Marino","Roma","Mónaco","Estocolomo"]; //Pregunta con id 11
 		
-		const  IdesGeoTema3 = [id3geo1,id3geo2,id3geo3,id3geo4,id3geo5,id3geo6,id3geo7,id3geo8,id3geo9];
+		const  IdesGeoTema3 = [id3geo1,id3geo2,id3geo3,id3geo4,id3geo5,id3geo6,id3geo7,id3geo8,id3geo9,id3geo10,id3geo11,id3geo12,id3geo13];
 	 
 	 //Array de arrays de los temas
 		const Temas = [IdesHisTema20,IdesMatTema1,IdesGeoTema3];
@@ -983,17 +997,24 @@
 		aciertos=0;
 		puntosrapidos=0;
 		
+		MarcadorLocal=0;
+		MarcadorRival=0;
+		TiempoRapido=0;
+		Posedor=0;
+		SitioCampo=1;
+		
 		document.getElementById("infoarriba2").innerHTML="---";
 		document.getElementById("infoarriba1").innerHTML="---";
-		document.getElementById("info").innerHTML="Responde las preguntas para derrotar al rival";
+		document.getElementById("info").innerHTML="Comienza el partido.";
+		document.getElementById("marcadorlocal").innerHTML=MarcadorLocal;
+			document.getElementById("marcadorrival").innerHTML=MarcadorRival;
+		document.getElementById("tuvida").innerHTML=TiempoRapido;
 			
 		Transiciones(2);
 		TemaElegido=numero;
 		document.getElementById("tuimagen").src="./EquipoPrueba.png";          
 	document.getElementById("imagenenemigo").src="./EquipoPrueba2.png";       		
-		document.getElementById("vida").innerHTML=Vida;
-        document.getElementById("tuvida").innerHTML=TuVida;
-        Info="Acierta las preguntas para hacer daño";
+        Info="Comienza el partido.";
         document.getElementById("info").innerHTML=Info;
         console.log(Vida);
         NumeroAleatorio = Math.floor(Math.random()*Temas[TemaElegido].length); //Numero Aleatorio para la pregunta
@@ -1027,9 +1048,22 @@
 		function Enter(numero){
             
             document.activeElement.blur();
+			TiempoRapido=TiempoRapido+5;
+			document.getElementById("tuvida").innerHTML=TiempoRapido;
+			if(TiempoRapido>=90){
+			puntosrapidos=puntosrapidos+10;
+			aciertos=aciertos+1;
+			document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
+			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+			document.getElementById("PuntosRapidos").innerHTML="<p>Puntuación: "+ puntosrapidos +"</p>";
+			document.getElementById("ResultadosResumen").innerHTML="<p>¡Has derrotado al rival!</p>";
+			
+			Transiciones(4);
+             
+            }
             if(RespuestaCorrecta==document.getElementById("respuesta"+numero).innerHTML)
             {
-			if(Vida<=10){
+			if(TiempoRapido>=90){
 			puntosrapidos=puntosrapidos+10;
 			aciertos=aciertos+1;
 			document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
@@ -1040,38 +1074,143 @@
 			Transiciones(4);
              
             }else{
-               Xinfo="Está bien, Has hecho +10 de daño al rival";
-			   Sinfo="green";
-			ActualizarInfo(Xinfo,Sinfo);
-                console.log("Está bien, Has hecho +10 de daño al rival");
+			
+			//si tenemos la posesión
+			if(Posedor==0){
+			
+				//si el balón esta en nuestra zona
+				if(SitioCampo==0){
+				Xinfo="Avanzamos con el balón hasta medio campo";
+				Sinfo="green";
+				ActualizarInfo(Xinfo,Sinfo);
+				SitioCampo=SitioCampo+1;
+				
+				} 
+				//si el balón esta en medio
+				else if (SitioCampo==1){
+				Xinfo="Avanzamos con el balón hasta campo rival";
+				Sinfo="green";
+				ActualizarInfo(Xinfo,Sinfo);
+				SitioCampo=SitioCampo+1;
+				
+				}
+				//si el balón esta en zona rival
+				else if(SitioCampo==2){
+				Xinfo="GOOOOOOOL";
+				Sinfo="green";
+				ActualizarInfo(Xinfo,Sinfo);
+				SitioCampo=1;
+				Posedor=1;
+				MarcadorLocal=MarcadorLocal+1;
+				}
+			}
+			//si no la tenemos
+			else {
+				
+				//si el balón esta en nuestra zona
+				if(SitioCampo==0){
+				Xinfo="Recuperamos un balón en nuestro campo";
+				Sinfo="green";
+				ActualizarInfo(Xinfo,Sinfo);
+				Posedor=0;
+				
+				} 
+				//si el balón esta en medio
+				else if (SitioCampo==1){
+			Xinfo="Recuperamos un balón en el medio";
+				Sinfo="green";
+				ActualizarInfo(Xinfo,Sinfo);
+				
+				Posedor=0;
+				
+				}
+				//si el balón esta en zona rival
+				else if(SitioCampo==2){
+				Xinfo="Recuperamos un balón en su campo";
+				Sinfo="green";
+				ActualizarInfo(Xinfo,Sinfo);
+				
+				Posedor=0;
+				}
+			
+			}
 				aciertos=aciertos+1;
 				puntosrapidos=puntosrapidos+10;
-				Ataque();
                 recargar();
 				}
             }
+			//si has fallado
             else{
+			
+			
+			//si tenemos la posesión
+			if(Posedor==0){
+			
+				//si el balón esta en nuestra zona
+				if(SitioCampo==0){
+				Xinfo="Hemos perdido el balón en nuestra zona";
+				Sinfo="red";
+				ActualizarInfo(Xinfo,Sinfo);
+				Posedor=1;
+				
+				} 
+				//si el balón esta en medio
+				else if (SitioCampo==1){
+				Xinfo="Hemos perdido el balón en medio";
+				Sinfo="red";
+				ActualizarInfo(Xinfo,Sinfo);
+				Posedor=1;
+				
+				}
+				//si el balón esta en zona rival
+				else if(SitioCampo==2){
+				Xinfo="Hemos perdido el balón en su zona";
+				Sinfo="red";
+				ActualizarInfo(Xinfo,Sinfo);
+				Posedor=1;
+				}
+			}
+			//si no la tenemos
+			else {
+				
+				//si el balón esta en nuestra zona
+				if(SitioCampo==0){
+				Xinfo="Gol del rival";
+				Sinfo="red";
+				ActualizarInfo(Xinfo,Sinfo);
+				Posedor=0;
+				SitioCampo=1;
+				MarcadorRival=MarcadorRival+1;
+				
+				} 
+				//si el balón esta en medio
+				else if (SitioCampo==1){
+			Xinfo="El rival avanza hasta nuestra zona";
+				Sinfo="red";
+				ActualizarInfo(Xinfo,Sinfo);
+				SitioCampo=0;
+				
+				}
+				//si el balón esta en zona rival
+				else if(SitioCampo==2){
+				Xinfo="El rival avanza hasta medio campo";
+				Sinfo="red";
+				ActualizarInfo(Xinfo,Sinfo);
+				
+				SitioCampo=1;
+				}
+			
+			}
+			
+			
                 console.log(document.getElementById("respuesta"+numero).innerHTML);
-                  Xinfo="Está mal, -10 de vida";
+                
 				  fallos=fallos+1;
 				  puntosrapidos=puntosrapidos-3.3;
-				Sinfo="red";
-			ActualizarInfo(Xinfo,Sinfo);
-                console.log("Está mal");
-                TuVida=TuVida-AtaqueRival;
-                document.getElementById("tuvida").innerHTML=TuVida;
-				if(TuVida<=0){
-				document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
-			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
-					if(puntosrapidos<0){
-						puntosrapidos=0;
-					}
-			document.getElementById("PuntosRapidos").innerHTML="<p>Puntuación: "+ puntosrapidos +"</p>";
-			document.getElementById("ResultadosResumen").innerHTML="<p>¡Te ha derrotado el rival! Tendrás que prepararte mejor la próxima vez.</p>";
-                Transiciones(4);
-				}
                 
             }
+			document.getElementById("marcadorlocal").innerHTML=MarcadorLocal;
+			document.getElementById("marcadorrival").innerHTML=MarcadorRival;
         }
 		
 		function recargar(){
@@ -1125,19 +1264,11 @@
             //document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
             
             
-            document.getElementById("vida").innerHTML=Vida;
+          
         }
 		
 		
-		function Ataque(){
-			if(CuentaPotenciadorMiAtaque>=1){
-				Vida=Vida-MiAtaque*PotenciadorMiAtaque;
-				CuentaPotenciadorMiAtaque=CuentaPotenciadorMiAtaque-1;
-			}else{
-				Vida=Vida-MiAtaque;
-				PotenciadorMiAtaque=0;
-			}
-		}
+		
 		function ActualizarInfo(Xinfo,Sinfo){
 			document.getElementById("infoarriba2").innerHTML=document.getElementById("infoarriba1").innerHTML;
 			document.getElementById("infoarriba1").innerHTML=document.getElementById("info").innerHTML;
