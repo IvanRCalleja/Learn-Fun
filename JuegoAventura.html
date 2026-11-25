@@ -221,9 +221,11 @@
 		#abajo a{
 		color:#636363;
 		}
+		@media (hover: hover) and (pointer: fine) {
 		#abajo a:hover{
 		background-color:#DBDBDB;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
 		}
 		#abajo a:activate{
 		background-color:#DBDBDB;
@@ -764,7 +766,7 @@
 						<h2>Geografía</h2><img class="iconosasignaturas" src="iconogeografia.png"></img>
 					</div>
 					<div class="EleccionTemas">
-						<a class="botontema" onclick="ElegirTema(1)">Capitales de Europa</a>
+						<a class="botontema"  href="javascript:Jugar(2);">Capitales de Europa</a>
 						<a class="botontema" onclick="ElegirTema(1)">Capitales de África</a>	
 						<a class="botontema" onclick="ElegirTema(1)">Provincias de España</a>
 					</div>
@@ -900,8 +902,21 @@
 
 	    const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21,id20His22]; //Id de las preguntas, Arrays donde se guardan los Arrays
 
+	  //Preguntas Geografia Nivel 1, capitales Europa
+        const id3geo1 = ["¿Cual es la capital de Portugal?","Lisboa","Oporto","Praga","Paris"]; //Pregunta con id 07
+        const id3geo2 = ["¿Cual es la capital de Italia?","Roma","Milán","Turín","Vaticano"]; //Pregunta con id 08
+        const id3geo3 = ["¿Cual es la capital de España?","Madrid","Barcelona","Sevilla","Valencia"]; //Pregunta con id 09
+        const id3geo4 = ["¿Cual es la capital de Francia?","Paris","Tolouse","Marsella","Monaco"]; //Pregunta con id 10
+        const id3geo5 = ["¿Cual es la capital de Inglaterra?","Londres","Manchester","Brighton","Dubín"]; //Pregunta con id 11
+		const id3geo6 = ["¿Cual es la capital de Liechtestein?","Vaduz","Viena","Varsovia","Berna"]; //Pregunta con id 11
+		const id3geo7 = ["¿Cual es la capital de Grecia?","Atenas","Skopie","Tirana","Ciudad del Vaticano"]; //Pregunta con id 11
+		const id3geo8 = ["¿Cual es la capital de Macedonia del norte?","Skopie","Pristina","Tirana","San marino"]; //Pregunta con id 11
+		const id3geo9 = ["¿Cual es la capital de Estonia?","Tallín","Luxemburgo","Helsinki","Riga"]; //Pregunta con id 11
+		
+		const  IdesGeoTema3 = [id3geo1,id3geo2,id3geo3,id3geo4,id3geo5,id3geo6,id3geo7,id3geo8,id3geo9];
+	 
 	 //Array de arrays de los temas
-		const Temas = [IdesHisTema20,IdesMatTema1];
+		const Temas = [IdesHisTema20,IdesMatTema1,IdesGeoTema3];
 	 function Transiciones(numero){
 	 
 		if(numero==1){
@@ -927,14 +942,14 @@
 	  document.getElementById("MenuTemas").style.display="none";
 		}
 		if(numero==4){
-		//pasa de la elecion de temas de juego rapido a inicio.
+		//pasa del juego a resultados.
 		 document.getElementById("gameplayPadre").hidden=true;
 		 document.getElementById("gameplayPadre").style.display="none";
 		 document.getElementById("resultadosRapido").hidden=false;
 	  document.getElementById("resultadosRapido").style.display="flex";
 		}
 		if(numero==5){
-		//pasa de la elecion de temas de juego rapido a inicio.
+		//pasa de los resultados al inicio.
 		 document.getElementById("resultadosRapido").hidden=true;
 		 document.getElementById("resultadosRapido").style.display="none";
 		 document.getElementById("inicio").hidden=false;
@@ -1058,7 +1073,7 @@
 		
 		function recargar(){
 			
-			const Temas = [IdesHisTema20,IdesMatTema1];
+			const Temas = [IdesHisTema20,IdesMatTema1,IdesGeoTema3];
            //Array de arrays de los temas
 		
 		

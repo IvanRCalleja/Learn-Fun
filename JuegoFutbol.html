@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Learn&Fun Hacia la gloria</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+	<link rel="icon" type="image/png" sizes="32x32" href="Titulo3.png">
+    <style>
+        body{
+        
+           background-image: url("Fondo_3.png");
+			margin: 0px;
+			font-family:'Poppins',sans-serif;
+			color:black;
+        }
+		
+		a{
+		color:white;
+		text-decoration:none;
+		}
+		
+		#Div2 a{
+		color:Black;
+		text-decoration:none;
+		}
+		
+		nav a{
+		padding-right:10px;
+		font-weight:600px;
+		font-weight: bold;
+		}
+		
+		nav a:hover{
+		color:#DBDBDB;
+		}
+		
+		header{
+		display: flex;
+		height: 70px;
+		background-color: #5441B5;
+		justify-content: space-between;
+		align-items: center;
+		padding: 3px;
+		color:white;
+		}
+		
+		.BarraLogo{
+		display: flex;
+		align-items: center;
+		
+		}
+		
+		.BarraLogo img{
+		height: 50px;
+		margin-right:10px;
+		}
+		
+	
+		#inicio{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+			background-color:white;
+			margin:20px;
+			margin-left:200px;
+			margin-right:200px;
+			padding:20px;
+			border-radius:10px;
+			
+			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
+		
+		}
+		
+		#MenuTemas{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+			background-color:white;
+			margin:20px;
+			margin-left:200px;
+			margin-right:200px;
+			padding:20px;
+			border-radius:10px;
+			
+			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
+		
+		}
+		#gameplayPadre{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+			background-color:white;
+			margin:20px;
+			margin-left:200px;
+			margin-right:200px;
+			padding:20px;
+			border-radius:10px;
+			
+			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
+			min-height:600px;
+		
+		}
+		
+		#gameplay{
+		
+			background-color:white;
+			max-width:800px;
+			margin-left:100px;
+			margin-right:100px;
+			
+		}
+		#resultadosRapido{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+			background-color:white;
+			margin:20px;
+			margin-left:200px;
+			margin-right:200px;
+			padding:20px;
+			border-radius:10px;
+			
+			box-shadow: 1px 10px 19px 2px rgba(255,255,255,0.18);
+			min-height:600px;
+		
+		}
+		#resultadosRapido2{
+		
+			background-color:white;
+			max-width:800px;
+			margin-left:100px;
+			margin-right:100px;
+			
+		}
+		#resultadosRapido a{
+		background-color:white;
+		color:black;
+		border-radius:35px;
+		border-width:0px;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.15);
+	
+		text-align:center;
+	
+		font-family:sans-serif;
+		font-weight: bold;
+		}
+		#inicio2{
+		display:flex;
+			flex-direction:column;
+			align-items: center;
+			padding:40px;
+		}
+		.botonjugar{
+		background-color:white;
+		color:black;
+		border-radius:35px;
+		border-width:0px;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.15);
+		width:140px;
+		height:20px;
+		text-align:center;
+		padding:25px;
+		font-family:sans-serif;
+		font-weight: bold;
+		}
+		.botonjugar:hover{
+		background-color:#DBDBDB;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		.botonjugar:activate{
+		background-color:#DBDBDB;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		.botontema:hover{
+		background-color:#DBDBDB;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		.botontema:activate{
+		background-color:#DBDBDB;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		.botontema{
+		background-color:white;
+		color:black;
+		border-radius:35px;
+		border: 1px solid #D9D9D9;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
+		min-width:110px;
+		height:25px;
+		text-align:center;
+		padding:15px;
+		font-family:sans-serif;
+		font-weight: bold;
+		
+		}
+		#divatrasdetemas a{
+			background-color:white;
+		color:black;
+		border-radius:35px;
+		border-width:4px gray;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
+		min-width:110px;
+		height:25px;
+		text-align:center;
+		padding:15px;
+		font-family:sans-serif;
+		font-weight: bold;
+		
+		}
+		#divatrasdetemas a:hover{
+		background-color:#DBDBDB;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		#divatrasdetemas a:activate{
+		background-color:#DBDBDB;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		#abajo a{
+		color:#636363;
+		}
+		#abajo a:hover{
+		background-color:#DBDBDB;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		#abajo a:activate{
+		background-color:#DBDBDB;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0);
+		}
+		.respuestas{
+		background-color:white;
+		color:black;
+		border-radius:35px;
+		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
+		border: 1px solid #D9D9D9;
+		min-width:110px;
+		height:25px;
+		text-align:center;
+		padding:15px;
+		font-family:sans-serif;
+		font-weight: bold;
+		display: inline-block;
+		margin-top:2px;
+		
+		}
+		#imgtitulo1{
+		width:400px;
+		height:220px;
+		}
+		.EleccionTemas{
+		margin-bottom:30px;
+	
+		
+		
+		}
+		.EleccionTemas1{
+		display:flex;
+		flex-direction:column;
+		 border-bottom: 2px solid #CFCFCF;
+		
+		
+		
+		}
+		.EleccionTemas a{
+		color:black;
+		  display: inline-block;
+		
+		}
+		.iconosasignaturas{
+		width:50px;
+		height:50px;
+		}
+		.diviconos{
+		display:flex;
+		margin-bottom:15px;
+		padding-bottom:15px;
+		}
+		#gameplayimagenes{
+		 background-image: url("FondoBosque.png");
+		 display: flex;
+			justify-content: space-between;
+			
+		}
+		#gameplayvidas{
+		display:flex;
+		align-items:center;
+		justify-content: space-between;
+		margin-top:-20px;
+		font-size:12px;
+		
+		
+		}
+		#gameplayvidas div{
+		display:flex;
+		align-items:center;
+		
+		}
+		#gameplayimagenes{
+		height:230px;
+		width:800px;
+		}
+		#gameplayimagenes img{
+		height:230px;
+		}
+		#tuimagen{	
+		margin-left:50px;
+		
+		}
+		#imagenenemigo{
+		margin-right:50px;
+		
+		}
+		#gameplayrival{
+		-webkit-text-stroke: 1px red;
+		}
+		#gameplaytu{
+		-webkit-text-stroke: 1px green;
+		}
+		#divatrasdetemas{
+		display:flex;
+		justify-content:space-between;
+		}
+		#divatrasdetemas a{
+		color:black;
+		}
+		#gameplayinformacion{
+		 border-top: 2px solid #CFCFCF;
+		 border-bottom: 2px solid #CFCFCF;
+		}
+		#gameplayinformacion h2{
+			font-size:13px;
+			margin-bottom:-2px;
+			margin-top:-2px;
+			}
+		#Principal{
+			font-size:10px;
+			color:#4D4D4D;
+			}
+			#infoarriba1{
+	
+		 opacity: 0.66;
+		 
+		}
+		#infoarriba2{
+	
+		 opacity: 0.33;
+		 
+		}
+		@media(max-width:1200px){
+		#gameplayimagenes{
+		height:230px;
+		width:600px;
+		
+		}
+		#gameplayPadre{
+			margin-right:150px;
+			margin-left:150px;
+			
+			}
+			#resultadosRapido{
+			margin-right:150px;
+			margin-left:150px;
+			
+			}
+		}
+		@media(max-width:1000px){
+		#gameplayimagenes{
+		height:230px;
+		width:500px;
+		}
+		#gameplayPadre{
+			margin-right:100px;
+			margin-left:100px;
+			
+			}
+			#resultadosRapido{
+			margin-right:100px;
+			margin-left:100px;
+			
+			}
+		}
+		@media(max-width:700px){
+			header{
+			flex-direction:column;
+			min-height: 80px;
+			padding: 10px;
+			}
+			#inicio{
+			margin-right:50px;
+			margin-left:50px;
+			
+			}
+			#MenuTemas{
+			margin-right:50px;
+			margin-left:50px;
+			
+			}
+			#gameplayPadre{
+			margin-right:30px;
+			margin-left:30px;
+			
+			}
+			#resultadosRapido{
+			margin-right:30px;
+			margin-left:30px;
+			
+			}
+			#imgtitulo1{
+		width:360px;
+		height:198px;
+		}
+		#inicio4{
+		width:400px;
+		}
+		
+		#gameplayimagenes{
+		height:230px;
+		width:300px;
+		}
+		
+		.botontema{
+			padding-top:15px;
+			padding-bottom:5px;
+			text-align:center;
+			margin-top:10px;
+			}
+				h2{
+			font-size:20px;
+			margin:0px;
+			padding:0px;
+			}
+			#Principal{
+			font-size:10px;
+			}
+			#gameplayinformacion h2{
+			font-size:10px;
+			}
+			.EleccionTemas a{
+				font-size:13px;
+			}
+			#divatrasdetemas a{
+				font-size:13px;
+				padding-top:15px;
+			padding-bottom:5px;
+			text-align:center;
+		
+			}
+			.iconosasignaturas{
+		width:25px;
+		height:25px;
+		}
+		.EleccionTemas1{
+		margin-left:24px;
+		margin-right:24px;
+		
+		}
+		#gameplayimagenes img{
+		height:150px;
+		}
+		
+			#gameplay{
+		
+			background-color:white;
+	
+			margin-left:100px;
+			margin-right:100px;
+			padding:0px;
+			
+			width:400px;
+		
+			}
+			#resultadosRapido2{
+		
+			background-color:white;
+	
+			margin-left:100px;
+			margin-right:100px;
+			padding:0px;
+			
+			width:400px;
+		
+			}
+			#abajo a{
+			font-size:15px;
+			margin:2px;
+			}
+		}
+		
+		@media(max-width:400px){
+			header{
+			flex-direction:column;
+			min-height: 80px;
+			padding: 10px;
+			}
+			#inicio{
+			margin-right:30px;
+			margin-left:30px;
+			
+			}
+			#MenuTemas{
+			margin-right:30px;
+			margin-left:30px;
+			
+			}
+			
+			.BarraLogo img{
+		height: 40px;
+		margin-right:10px;
+		}
+		#imgtitulo1{
+		width:288px;
+		height:159px;
+		}
+		#inicio4{
+		width:350px;
+		}
+			h2{
+			font-size:18px;
+			margin:0px;
+			padding:0px;
+			}
+			#gameplayinformacion h2{
+			font-size:10px;
+			}
+			
+			.EleccionTemas a{
+				font-size:12px;
+			}
+			.EleccionTemas1{
+		margin-left:30px;
+		margin-right:30x;
+		
+		}
+		.botontema{
+			padding-top:12px;
+			padding-bottom:2px;
+			text-align:center;
+			margin-top:10px;
+			}
+			.Respuestas{
+			padding-top:12px;
+			padding-bottom:2px;
+			text-align:center;
+			margin-top:10px;
+			}
+			#abajo a{
+			font-size:13px;
+			}
+				h2{
+			font-size:18px;
+			margin:0px;
+			padding:0px;
+			}
+			
+			
+			.EleccionTemas a{
+				font-size:11px;
+			}
+			#gameplayimagenes{
+		height:115px;
+		width:310px;
+		background-image: url("FondoBosque_3.png");
+		}
+		#gameplayimagenes img{
+		height:120px;
+		}
+		#gameplay{
+		
+			background-color:white;
+	
+			width:310px;
+			padding:0px;
+			}
+		
+		#gameplayPadre{
+			margin-right:10px;
+			margin-left:10px;
+			
+			}
+			#resultadosRapido2{
+		
+			background-color:white;
+	
+			width:310px;
+			padding:0px;
+			}
+		
+		#resultadosRapido{
+			margin-right:10px;
+			margin-left:10px;
+			
+			}
+			#Principal{
+			font-size:8px;
+			}
+			
+		
+		}
+		@media(max-width:350px){
+		#gameplayimagenes{
+		height:230px;
+		width:280px;
+		}
+		#gameplay{
+		
+			background-color:white;
+	
+			width:280px;
+			padding:0px;
+			}
+			#resultadosRapido2{
+		
+			background-color:white;
+	
+			width:280px;
+			padding:0px;
+			}
+		
+		
+		}
+		@media(max-width:300px){
+		#MenuTemas{
+			margin-right:20px;
+			margin-left:20px;
+			
+			}
+			#inicio4{
+		width:300px;
+		}
+		#gameplayimagenes{
+		height:230px;
+		width:160px;
+		}
+		#gameplayimagenes img{
+		height:100px;
+		}
+		#gameplay{
+		
+			background-color:white;
+	
+			width:160px;
+			padding:20px;
+			}
+			#resultadosRapido2{
+		
+			background-color:white;
+	
+			width:160px;
+			padding:20px;
+			}
+		
+		}
+    </style>
+</head>
+<body>
+	<header>
+		<div class="BarraLogo">
+			<img id="imgtituloanuncio" src="Titulo3.png"></img>
+			<h2 class="nombreempresa">Learn&Fun</h2>
+		</div>
+		<nav>
+				<a href="./Inicio.html" class="nav-link"> Inicio</a>
+				<a href="./Inicio.html#titulodiv2" class="nav-link"> Juegos</a>	
+				<a href="./Perfil.html" class="nav-link"> Sobre nosotros</a>
+				<a href="./Perfil.html" class="nav-link"> Perfil</a>	
+				
+			</nav>
+	</header>
+	<div id="inicio">
+        <div id="inicio3">
+        </div>
+        <div id="inicio2">
+            <img id="imgtitulo1" src="./Titulo1.png"></img>
+            <div id="inicio2">
+                <div id="piepagina2">
+                    <h7 >Juega una temporada de fubtol meintras respondes a las prguntas</h7>
+                </div>
+               
+                <a class="botonjugar" href="javascript:Transiciones(1);"  onclick="Transiciones(1)">JUEGO RAPIDO</a><br>
+				
+				<div id="piepagina2">
+                    <h7 >Recorre el peligroso universo para salvar el reino</h7>
+                </div>
+               
+                <a class="botonjugar"  href="./Perfil.html" >TEMPORADA</a><br>
+                <div id="piepagina2">
+                    <h7 >Salir del juego</h7>
+                </div>
+                
+                <a class="botonjugar" href="./Inicio.html"> CERRAR JUEGO</a>
+            </div>
+            <div id="piepagina">
+
+            </div>
+        </div>
+		                
+    </div>
+	
+	<div id="MenuTemas">
+	
+       
+  
+            <div id="inicio4">
+				 <div class="EleccionTemas1">
+					<div id="divatrasdetemas">
+						
+						<h2> Elige el tema</h2>
+						<a  href="javascript:Transiciones(3);" onclick="Transiciones(3)">Atrás </a><br><br><br>
+					</div>
+					<div class="diviconos">			 
+						<h2>Historia</h2><img class="iconosasignaturas" src="iconohistoria.png"></img>
+					</div>
+					<div class="EleccionTemas">
+						<a class="botontema" href="javascript:Jugar(0);" onclick="Jugar(0)">Guerra fria</a>
+						<a class="botontema" onclick="ElegirTema(1)">Guerra civil</a>
+						<a class="botontema" onclick="ElegirTema(1)">Revolución francesa</a>
+						<a class="botontema" onclick="ElegirTema(1)">1ª Guerra mundial</a>
+						<a class="botontema" onclick="ElegirTema(1)">Edad media</a>
+						<a class="botontema" onclick="ElegirTema(1)">Revolución industrial</a>
+						
+					</div>
+				</div>
+               <br>
+			    <div  class="EleccionTemas1">
+					<div class="diviconos">
+						<h2>Matematicas</h2><img class="iconosasignaturas" src="iconomates.png"></img>
+					</div>
+					<div class="EleccionTemas">
+						<a class="botontema"  href="javascript:Jugar(1);" onclick="Jugar(1)">Sumas de 2 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Sumas de 3 cifras</a>	
+						<a class="botontema" onclick="ElegirTema(1)">Restas de 2 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Restas de 3 cifras</a>
+						<a class="botontema" onclick="ElegirTema(1)">Multiplicaciones</a>
+						<a class="botontema" onclick="ElegirTema(1)">Números romanos</a>
+					</div>
+				</div>
+				<br>
+				<div  class="EleccionTemas1">
+					<div class="diviconos">
+						<h2>Biología</h2><img class="iconosasignaturas" src="iconobiologia.png"></img>
+					</div>
+					<div class="EleccionTemas">
+						<a class="botontema" onclick="ElegirTema(1)">Virus, moneras, protistas y hongos.</a>
+						<a class="botontema" onclick="ElegirTema(1)">Celulas eucariotas</a>	
+						<a class="botontema" onclick="ElegirTema(1)">Cuerpo humano</a>
+					</div>
+				</div>
+				<br>
+				<div  class="EleccionTemas1">
+					<div class="diviconos">
+						<h2>Lenguas extranjera inglés</h2><img class="iconosasignaturas" src="iconoingles.png"></img>
+					</div>
+					<div class="EleccionTemas">
+						<a class="botontema" onclick="ElegirTema(1)">Verbs</a>
+						<a class="botontema" onclick="ElegirTema(1)">Present simple</a>	
+						<a class="botontema" onclick="ElegirTema(1)">Thir person</a>
+					</div>
+				</div>
+				<br>
+				<div  class="EleccionTemas1">
+					<div class="diviconos">
+						<h2>Geografía</h2><img class="iconosasignaturas" src="iconogeografia.png"></img>
+					</div>
+					<div class="EleccionTemas">
+						<a class="botontema"  href="javascript:Jugar(2);">Capitales de Europa</a>
+						<a class="botontema" onclick="ElegirTema(1)">Capitales de África</a>	
+						<a class="botontema" onclick="ElegirTema(1)">Provincias de España</a>
+					</div>
+				</div>
+			
+           
+         
+        </div>
+        
+    </div>
+	<div id="gameplayPadre">
+		<div id="gameplay">
+			<div id="gameplayvidas">
+				<div id="gameplayrival">
+				<h2 id="textovidatu">Mi vida:</h2>
+					<h2 id="tuvida">100</h2>
+					
+				</div>
+				<div id="gameplaytu">
+					<h2 id="textovidae">Vida enemigo:</h2>
+					<h2 id="vida">100</h2>
+				</div>
+			</div>
+			<div id="gameplayimagenes">
+				<div>
+				<img id="tuimagen" src="./prueba1.png">
+				</div>
+				<div>
+				<img id="imagenenemigo"  src="./prueba1.png">  
+				</div>
+			</div>
+			
+			<div id="gameplayinformacion">
+				<h2 id="infoarriba2">---</h2>
+				<h2 id="infoarriba1">---</h2>
+				<h2 id="info">Acierta las preguntas para hacer daño</h2>
+			</div>
+			<div id="Principal">
+			</div>
+			<div id="abajo">
+				<a href="javascript:Enter(1);" id="respuesta1" class="respuestas" ></a>
+				<a href="javascript:Enter(2);" id="respuesta2" class="respuestas" ></a>
+				<a href="javascript:Enter(3);" id="respuesta3" class="respuestas" ></a>
+				<a href="javascript:Enter(4);" id="respuesta4" class="respuestas" ></a>       
+			</div>
+        </div>
+	</div>
+	<div id="resultadosRapido">
+		<div id="resultadosRapido2">
+		<h1>Resultados</h1>
+		<p id="ResultadosResumen"></p>
+		<p id="Fallos">Fallos</p>
+		<p id="Aciertos">Fallos</p>
+		<p id="PuntosRapidos">Fallos</p>
+		<a  href="javascript:Transiciones(5);" onclick="Transiciones(5)">Atrás </a>
+		<div>
+	</div>
+	<h7 >Con la colaboración de Alejandro Sanchez</h7>
+	<p>Beta 1.0</p>
+	
+	
+	 <script>
+	 document.getElementById("MenuTemas").hidden=true;
+	  document.getElementById("MenuTemas").style.display="none";
+	  document.getElementById("gameplayPadre").hidden=true;
+	  document.getElementById("gameplayPadre").style.display="none";
+	  document.getElementById("resultadosRapido").hidden=true;
+	  document.getElementById("resultadosRapido").style.display="none";
+		
+		MarcadorLocal=0;
+		MarcadorRival=0;
+		TiempoRapido=0;
+		
+		
+		Vida=100;
+        TuVida=100;
+		Victorias=0;
+	    MiNombre="";
+        Dialogo=0;
+		Oro=0;
+		AtaqueRival=10;
+		MiAtaque=10;
+        CuentaLadron=0;
+		PotenciadorMiAtaque=0;
+		CuentaPotenciadorMiAtaque=0;
+		NivelEspada=0;
+		NivelDefensa=0;
+		TipoMonstruo=0;
+		TipoJugador=0;
+		VidaMaxima=100;
+		TemaElegido=1;
+		fallos=0;
+		aciertos=0;
+		puntosrapidos=0;
+		
+		 //Preguntas Matematicas Nivel 1, Sumas 2 cifras
+        const id1Mat1 = ["¿Cuanto es 36+36?","72","66","366","84",""]; //Pregunta con id 01
+        const id1Mat2 = ["¿Cuanto es 76+89?","165","123","159","160",""]; //Pregunta con id 01
+        const id1Mat3 = ["¿Cuanto es 20+20?","40","30","22","50",""]; //Pregunta con id 01
+        const id1Mat4 = ["¿Cuanto es 99+11?","110","111","100","101",""]; //Pregunta con id 01
+        const id1Mat5 = ["¿Cuanto es 45+17?","62","57","69","52",""]; //Pregunta con id 01
+        const id1Mat6 = ["¿Cuanto es 16+5+12?","33","26","31","42",""]; //Pregunta con id 01
+        const id1Mat7 = ["¿Cuanto es 55+25?","80","65","70","75",""]; //Pregunta con id 01
+        const id1Mat8 = ["¿Cuanto es 3+3+17?","23","18","19","21",""]; //Pregunta con id 01
+		const id1Mat9 = ["¿Cuanto es 51+4?","55","54","57","56",""]; //Pregunta con id 01
+		const id1Mat10 = ["¿Cuanto es 13+31+42?","86","73","91","82",""]; //Pregunta con id 01
+		const id1Mat11 = ["¿Cuanto es 32+50+15?","97","92","95","99",""]; //Pregunta con id 01
+		const id1Mat12 = ["¿Cuanto es 34+56?","90","84","86","88",""]; //Pregunta con id 01
+		const id1Mat13 = ["¿Cuanto es 60+42?","102","92","82","104",""]; //Pregunta con id 01
+		
+		const  IdesMatTema1 = [id1Mat1,id1Mat2,id1Mat3,id1Mat4,id1Mat5,id1Mat6,id1Mat7,id1Mat8,id1Mat9,id1Mat10,id1Mat11,id1Mat12,id1Mat13]; //Id de las preguntas, Arrays donde se guardan los Arrays
+		
+	  
+	  //Preguntas Historia Nivel 2, Guerra fria
+        const id20His1 = ["¿En que año acabó la guerra fria?","1991","1990","1989","1971",""]; //Pregunta con id 01
+        const id20His2 = ["¿La Guerra Fría empezó después de qué conflicto?","Segunda guerra mundial","Guerra de Vietnam","Primera guerra mundial","Guerra civil",""]; //Pregunta con id 01
+        const id20His3 = ["¿Que 2 principales potencias se enfrentaron?","EEUU y URSS","URSS y Japón","Alemania y EEUU","Alemania y URSS",""]; //Pregunta con id 01
+        const id20His4 = ["¿cómo se llamó la reunión en la que surgieron numerosas discrepancias y fue la antesala de la Guerra Fría?"," Conferencia de Yalta"," Conferencia de Teheran","Conferencia de Berlín","Conferencia de Washignton",""]; //Pregunta con id 01
+        const id20His5 = ["¿Quién era el líder de la URSS al inicio de la Guerra Fría?","Stalin","Lenin","Jrushchov","Brezhnev",""]; //Pregunta con id 01
+        const id20His6 = ["¿Qué presidente declaró el objetivo de llevar a un estadounidense a la Luna?","Kennedy","Eisenhower","Truman","Regan",""]; //Pregunta con id 01
+        const id20His7 = ["¿Quién fue el líder soviético cuyas políticas de Glásnost y Perestroika contribuyeron a la disolución de la Unión Soviética y al fin de la Guerra Fría?","Gorbachov","Brezhnev","Stalin","Trotski",""]; //Pregunta con id 01
+        const id20His8 = ["¿En que año se construyo el muro de Berlín?","1961","1954","1957","1964",""]; //Pregunta con id 01
+		const id20His9 = ["¿Por qué el período histórico llamado Guerra Fríarecibió este nombre?","La rivalidad entre Estados Unidos y la Unión Soviética se dio únicamente en el campo cultural, comercial y político, no bélico.","54","57","56",""]; //Pregunta con id 01
+		const id20His10 = ["Dos organizaciones militares fueron fundadas, una por la Unión Soviética y otra por los Estados Unidos, con el objetivo de asegurar alianzas dentro de la lógica bipolar en la que el mundo vivía durante la Guerra Fría.","Pacto de Varsovia y OTAN","ONU y OTAN"," Pacto de Varsovia y ONU","ONU y OEA",""]; //Pregunta con id 01
+		const id20His11 = ["Entre los conflictos que ocurrieron debido a la disputa ideológica durante la Guerra Fría, podemos mencionar:","Revolución Cubana","Revolución Francesa","Guerra Ruso-Japonesa","Guerra Hispano-Americana",""]; //Pregunta con id 01
+		const id20His12 = ["¿Cuáles hechos se consideran como el fin de la Guerra Fría?","La caída del Muro de Berlín en 1989 y la disolución de la Unión Soviética en 1991.","El final de la dictadura de Pinochet en Chile en 1990.","El fin de la Guerra de Afganistán en 1992.","La Guerra del Golfo Pérsico 1990-1991.",""]; //Pregunta con id 01
+		const id20His13 = ["¿Qué política se implementó en EEUU durante la presidencia de Kennedy?","Coexistencia pacífica","Aislamiento Diplomatico","Intervención directa","Apaciguamiento militar",""]; //Pregunta con id 01
+		const id20His14 = ["¿Cuál fue una de las consecuencias de la construcción del muro de Berlín en 1961?","División de Berlín y control de la emigración","Fin de la Guerra Fría","Unificación de Alemania Oriental y Occidental","Aumento de la cooperación entre bloques",""]; //Pregunta con id 01
+		const id20His15 = ["¿Qué tratado se firmó en 1972 entre EEUU y URSS?","Tratado de limitación de armas nucleares","Pacto de Varsovia","Acuerdo de cooperación económica","Tratado de paz de París",""]; //Pregunta con id 01
+		const id20His16 = ["¿Cuál fue el primer país donde se dio un conflicto significativo durante la Guerra Fría?","Grecia","China","Cuba","Vietnam",""]; //Pregunta con id 01
+		const id20His17 = ["¿Qué programa implementó EEUU en 1947 para ayudar a Europa?","Plan Marshall","Plan de Contención","Plan de Reconstrucción","Plan de Ayuda Internacional",""]; //Pregunta con id 01
+		const id20His18 = ["¿Qué evento marcó la crisis de los misiles en 1962?","Instalación de misiles en Cuba","Revolución Cubana","Construcción del Muro de Berlín","Guerra Civil en Grecia",""]; //Pregunta con id 01
+		const id20His19 = ["¿Qué acción tomaron EEUU y sus aliados en Berlín en 1948?","Unieron sus sectores en Berlín","Desplegaron tropas en Berlín","Establecieron un gobierno comunista","Iniciaron la Guerra Civil",""]; //Pregunta con id 01
+		const id20His20 = ["¿Qué líder cubano se opuso al régimen de Batista en 1959?","Fidel Castro","Raúl Castro","Mao Zedong","Che Guevara",""]; //Pregunta con id 01
+		const id20His21 = ["¿Cuál define mejor la naturaleza de la Guerra Fría?","Fue una confrontación diplomática, ideológica, económica y estratégica entre Estados Unidos y la Unión Soviética sin una guerra directa general entre ambas potencias.","Fue una alianza económica entre las potencias vencedoras para reconstruir conjuntamente la Unión Soviética.","Fue un conflicto colonial entre Francia y Alemania por el control político de Europa oriental.","Fue una guerra exclusivamente militar entre Estados Unidos y la Unión Soviética desarrollada principalmente en Europa occidental.",""]; //Pregunta con id 01
+		const id20His22 = ["¿Qué fue el Plan Marshall?","Un programa de ayuda económica de EE. UU. para reconstruir Europa occidental tras la Segunda Guerra Mundial y frenar la expansión comunista.","Fue una alianza económica entre las potencias vencedoras para reconstruir conjuntamente la Unión Soviética.","Fue un conflicto colonial entre Francia y Alemania por el control político de Europa oriental.","Fue una guerra exclusivamente militar entre Estados Unidos y la Unión Soviética desarrollada principalmente en Europa occidental.",""]; //Pregunta con id 01
+
+
+	    const  IdesHisTema20 = [id20His1,id20His2,id20His3,id20His4,id20His5,id20His6,id20His7,id20His8,id20His9,id20His10,id20His11,id20His12,id20His13,id20His14,id20His15,id20His16,id20His17,id20His18,id20His19,id20His20,id20His21,id20His22]; //Id de las preguntas, Arrays donde se guardan los Arrays
+
+	  //Preguntas Geografia Nivel 1, capitales Europa
+        const id3geo1 = ["¿Cual es la capital de Portugal?","Lisboa","Oporto","Praga","Paris"]; //Pregunta con id 07
+        const id3geo2 = ["¿Cual es la capital de Italia?","Roma","Milán","Turín","Vaticano"]; //Pregunta con id 08
+        const id3geo3 = ["¿Cual es la capital de España?","Madrid","Barcelona","Sevilla","Valencia"]; //Pregunta con id 09
+        const id3geo4 = ["¿Cual es la capital de Francia?","Paris","Tolouse","Marsella","Monaco"]; //Pregunta con id 10
+        const id3geo5 = ["¿Cual es la capital de Inglaterra?","Londres","Manchester","Brighton","Dubín"]; //Pregunta con id 11
+		const id3geo6 = ["¿Cual es la capital de Liechtestein?","Vaduz","Viena","Varsovia","Berna"]; //Pregunta con id 11
+		const id3geo7 = ["¿Cual es la capital de Grecia?","Atenas","Skopie","Tirana","Ciudad del Vaticano"]; //Pregunta con id 11
+		const id3geo8 = ["¿Cual es la capital de Macedonia del norte?","Skopie","Pristina","Tirana","San marino"]; //Pregunta con id 11
+		const id3geo9 = ["¿Cual es la capital de Estonia?","Tallín","Luxemburgo","Helsinki","Riga"]; //Pregunta con id 11
+		
+		const  IdesGeoTema3 = [id3geo1,id3geo2,id3geo3,id3geo4,id3geo5,id3geo6,id3geo7,id3geo8,id3geo9];
+	 
+	 //Array de arrays de los temas
+		const Temas = [IdesHisTema20,IdesMatTema1,IdesGeoTema3];
+	 function Transiciones(numero){
+	 
+		if(numero==1){
+		//pasa del inicio, a la elecion de temas de juego rapido.
+		 document.getElementById("inicio").hidden=true;
+		 document.getElementById("inicio").style.display="none";
+		 document.getElementById("MenuTemas").hidden=false;
+	  document.getElementById("MenuTemas").style.display="flex";
+		}
+		//Pasa de elegir tema, al juego rapido
+		if(numero==2){
+		
+		 document.getElementById("MenuTemas").hidden=true;
+	  document.getElementById("MenuTemas").style.display="none";
+	  document.getElementById("gameplayPadre").hidden=false;
+	  document.getElementById("gameplayPadre").style.display="flex";
+		}
+		if(numero==3){
+		//pasa de la elecion de temas de juego rapido a inicio.
+		 document.getElementById("inicio").hidden=false;
+		 document.getElementById("inicio").style.display="flex";
+		 document.getElementById("MenuTemas").hidden=true;
+	  document.getElementById("MenuTemas").style.display="none";
+		}
+		if(numero==4){
+		//pasa del juego a resultados.
+		 document.getElementById("gameplayPadre").hidden=true;
+		 document.getElementById("gameplayPadre").style.display="none";
+		 document.getElementById("resultadosRapido").hidden=false;
+	  document.getElementById("resultadosRapido").style.display="flex";
+		}
+		if(numero==5){
+		//pasa de los resultados al inicio.
+		 document.getElementById("resultadosRapido").hidden=true;
+		 document.getElementById("resultadosRapido").style.display="none";
+		 document.getElementById("inicio").hidden=false;
+	  document.getElementById("inicio").style.display="flex";
+		}
+		
+		
+	 }
+	 function Jugar(numero){
+	 Vida=100;
+        TuVida=100;
+		Victorias=0;
+	    MiNombre="";
+        Dialogo=0;
+		Oro=0;
+		AtaqueRival=10;
+		MiAtaque=10;
+        CuentaLadron=0;
+		PotenciadorMiAtaque=0;
+		CuentaPotenciadorMiAtaque=0;
+		NivelEspada=0;
+		NivelDefensa=0;
+		TipoMonstruo=0;
+		TipoJugador=0;
+		VidaMaxima=100;
+		TemaElegido=1;
+		fallos=0;
+		aciertos=0;
+		puntosrapidos=0;
+		
+		document.getElementById("infoarriba2").innerHTML="---";
+		document.getElementById("infoarriba1").innerHTML="---";
+		document.getElementById("info").innerHTML="Responde las preguntas para derrotar al rival";
+			
+		Transiciones(2);
+		TemaElegido=numero;
+		document.getElementById("tuimagen").src="./EquipoPrueba.png";          
+	document.getElementById("imagenenemigo").src="./EquipoPrueba2.png";       		
+		document.getElementById("vida").innerHTML=Vida;
+        document.getElementById("tuvida").innerHTML=TuVida;
+        Info="Acierta las preguntas para hacer daño";
+        document.getElementById("info").innerHTML=Info;
+        console.log(Vida);
+        NumeroAleatorio = Math.floor(Math.random()*Temas[TemaElegido].length); //Numero Aleatorio para la pregunta
+		
+        GuardarId = Temas[TemaElegido][NumeroAleatorio];
+        //GuardarId = Ides[0];
+		
+		
+        console.log("Tema elegido"+TemaElegido);
+        console.log(GuardarId[0]);
+        document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
+        RespuestaCorrecta=GuardarId[1];
+        CopiaArray=GuardarId.slice(1,5);
+        ReordenarRespuesta = CopiaArray;
+       
+        ReordenarRespuesta.sort();
+        console.log(ReordenarRespuesta);
+        
+        //ReordenarRespuesta = ReordenarRespuesta.sort();
+        document.getElementById("respuesta1").innerHTML=ReordenarRespuesta[0];
+        document.getElementById("respuesta2").innerHTML=ReordenarRespuesta[1];
+        document.getElementById("respuesta3").innerHTML=ReordenarRespuesta[2];
+        document.getElementById("respuesta4").innerHTML=ReordenarRespuesta[3];
+
+        
+		
+		}
+		
+		
+		
+		function Enter(numero){
+            
+            document.activeElement.blur();
+            if(RespuestaCorrecta==document.getElementById("respuesta"+numero).innerHTML)
+            {
+			if(Vida<=10){
+			puntosrapidos=puntosrapidos+10;
+			aciertos=aciertos+1;
+			document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
+			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+			document.getElementById("PuntosRapidos").innerHTML="<p>Puntuación: "+ puntosrapidos +"</p>";
+			document.getElementById("ResultadosResumen").innerHTML="<p>¡Has derrotado al rival!</p>";
+			
+			Transiciones(4);
+             
+            }else{
+               Xinfo="Está bien, Has hecho +10 de daño al rival";
+			   Sinfo="green";
+			ActualizarInfo(Xinfo,Sinfo);
+                console.log("Está bien, Has hecho +10 de daño al rival");
+				aciertos=aciertos+1;
+				puntosrapidos=puntosrapidos+10;
+				Ataque();
+                recargar();
+				}
+            }
+            else{
+                console.log(document.getElementById("respuesta"+numero).innerHTML);
+                  Xinfo="Está mal, -10 de vida";
+				  fallos=fallos+1;
+				  puntosrapidos=puntosrapidos-3.3;
+				Sinfo="red";
+			ActualizarInfo(Xinfo,Sinfo);
+                console.log("Está mal");
+                TuVida=TuVida-AtaqueRival;
+                document.getElementById("tuvida").innerHTML=TuVida;
+				if(TuVida<=0){
+				document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
+			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
+					if(puntosrapidos<0){
+						puntosrapidos=0;
+					}
+			document.getElementById("PuntosRapidos").innerHTML="<p>Puntuación: "+ puntosrapidos +"</p>";
+			document.getElementById("ResultadosResumen").innerHTML="<p>¡Te ha derrotado el rival! Tendrás que prepararte mejor la próxima vez.</p>";
+                Transiciones(4);
+				}
+                
+            }
+        }
+		
+		function recargar(){
+			
+			const Temas = [IdesHisTema20,IdesMatTema1,IdesGeoTema3];
+           //Array de arrays de los temas
+		
+		
+			NumeroAleatorio = Math.floor(Math.random()*Temas[TemaElegido].length); //Numero Aleatorio para la pregunta
+		
+			GuardarId = Temas[TemaElegido][NumeroAleatorio];
+			//GuardarId = Ides[0];
+
+   
+        
+            console.log(GuardarId[0]);
+            console.log(GuardarId[5]);
+            document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
+            RespuestaCorrecta=GuardarId[1];
+           
+            CopiaArray=GuardarId.slice(1,5);
+        ReordenarRespuesta = [];
+        console.log(ReordenarRespuesta)
+           // ReordenarRespuesta.sort();
+
+           for ( z=0;ReordenarRespuesta.length<=3;z++){
+            let X=1 ;
+            NumeroAle2=Math.floor(Math.random()*CopiaArray.length);
+            console.log(NumeroAle2)
+            for(r=0;r<=ReordenarRespuesta.length;r++){       
+                if(ReordenarRespuesta[r]==CopiaArray[NumeroAle2]){
+                    X=X+1;
+                }
+            }
+            console.log(X+"X");
+            if (X==1){
+                ReordenarRespuesta[z]=CopiaArray[NumeroAle2];
+                
+            }else{
+                z=z-1;
+            }
+
+           }
+      
+        console.log(ReordenarRespuesta);
+            //console.log(GuardarId[0]);
+            document.getElementById("respuesta1").innerHTML=ReordenarRespuesta[0];
+            document.getElementById("respuesta2").innerHTML=ReordenarRespuesta[1];
+            document.getElementById("respuesta3").innerHTML=ReordenarRespuesta[2];
+            document.getElementById("respuesta4").innerHTML=ReordenarRespuesta[3];
+            //document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
+            
+            
+            document.getElementById("vida").innerHTML=Vida;
+        }
+		
+		
+		function Ataque(){
+			if(CuentaPotenciadorMiAtaque>=1){
+				Vida=Vida-MiAtaque*PotenciadorMiAtaque;
+				CuentaPotenciadorMiAtaque=CuentaPotenciadorMiAtaque-1;
+			}else{
+				Vida=Vida-MiAtaque;
+				PotenciadorMiAtaque=0;
+			}
+		}
+		function ActualizarInfo(Xinfo,Sinfo){
+			document.getElementById("infoarriba2").innerHTML=document.getElementById("infoarriba1").innerHTML;
+			document.getElementById("infoarriba1").innerHTML=document.getElementById("info").innerHTML;
+			document.getElementById("info").innerHTML=Xinfo;
+			document.getElementById("infoarriba2").style.color=document.getElementById("infoarriba1").style.color;
+			document.getElementById("infoarriba1").style.color=document.getElementById("info").style.color;
+			document.getElementById("info").style.color=Sinfo;
+			
+		}
+	 </script>
+</body>
+</html>
+
+
