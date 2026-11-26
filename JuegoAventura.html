@@ -147,6 +147,9 @@
 		font-family:sans-serif;
 		font-weight: bold;
 		}
+		#imagenresultado{
+		height:180px;
+		}
 		#inicio2{
 		display:flex;
 			flex-direction:column;
@@ -823,6 +826,7 @@
 		<p id="Fallos">Fallos</p>
 		<p id="Aciertos">Fallos</p>
 		<p id="PuntosRapidos">Fallos</p>
+		<img id="imagenresultado" src="./Jugador2_2.png"></img><br>
 		<a  href="javascript:Transiciones(5);" onclick="Transiciones(5)">Atrás </a>
 		<div>
 	</div>
@@ -1073,6 +1077,7 @@
 					}
 			document.getElementById("PuntosRapidos").innerHTML="<p>Puntuación: "+ puntosrapidos +"</p>";
 			document.getElementById("ResultadosResumen").innerHTML="<p>¡Te ha derrotado el rival! Tendrás que prepararte mejor la próxima vez.</p>";
+			document.getElementById("imagenresultado").src="./Enemigo6.png";  
                 Transiciones(4);
 				}
                 
