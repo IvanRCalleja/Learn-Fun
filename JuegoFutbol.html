@@ -278,7 +278,7 @@
 		padding-bottom:15px;
 		}
 		#gameplayimagenes{
-		 background-image: url("Fondo_3.png");
+		 background-image: url("FondoCampo1.png");
 		 display: flex;
 			justify-content: space-between;
 			
@@ -299,10 +299,13 @@
 		}
 		#gameplayimagenes{
 		height:230px;
-		width:800px;
+		width:700px;
 		}
 		#gameplayimagenes img{
 		height:230px;
+		}
+		#gameplayimagenes h1{
+		 text-shadow: 0px 5px 5px orange;
 		}
 		#tuimagen{	
 		margin-left:50px;
@@ -330,9 +333,9 @@
 		 border-bottom: 2px solid #CFCFCF;
 		}
 		#gameplayinformacion h2{
-			font-size:15px;
-			margin-bottom:-2px;
-			margin-top:-2px;
+			font-size:19px;
+			margin-bottom:-1px;
+			margin-top:-1px;
 			}
 		#Principal{
 			font-size:10px;
@@ -440,7 +443,7 @@
 			font-size:10px;
 			}
 			#gameplayinformacion h2{
-			font-size:13px;
+			font-size:18px;
 			}
 			.EleccionTemas a{
 				font-size:13px;
@@ -527,7 +530,7 @@
 			padding:0px;
 			}
 			#gameplayinformacion h2{
-			font-size:12px;
+			font-size:17px;
 			}
 			
 			.EleccionTemas a{
@@ -566,7 +569,7 @@
 			#gameplayimagenes{
 		height:115px;
 		width:310px;
-		background-image: url("FondoBosque_3.png");
+		background-image: url("Fondo_3.png");
 		}
 		#gameplayimagenes img{
 		height:120px;
@@ -929,8 +932,10 @@
 		const id3geo11 = ["¿Cual es la capital de Bélgica?","Bruselas","Brujas","Ámsterdam","Chisinau"]; //Pregunta con id 11
 		const id3geo12 = ["¿Cual es la capital de Dinamarca?","Copenhague","Estocolmo","Oslo","Budapest"]; //Pregunta con id 11
 		const id3geo13 = ["¿Cual es la capital de San Marino?","San Marino","Roma","Mónaco","Estocolomo"]; //Pregunta con id 11
+		const id3geo14 = ["¿Cual es la capital de Chipre?","Nicosia","Andorra la vieja","Mónaco","Atenas"]; //Pregunta con id 11
+		const id3geo15 = ["¿Cual es la capital de Montenegro?","Podgorica","Bratislava","Belgrado","Sarajevo"]; //Pregunta con id 11
 		
-		const  IdesGeoTema3 = [id3geo1,id3geo2,id3geo3,id3geo4,id3geo5,id3geo6,id3geo7,id3geo8,id3geo9,id3geo10,id3geo11,id3geo12,id3geo13];
+		const  IdesGeoTema3 = [id3geo1,id3geo2,id3geo3,id3geo4,id3geo5,id3geo6,id3geo7,id3geo8,id3geo9,id3geo10,id3geo11,id3geo12,id3geo13,id3geo14,id3geo15];
 	 
 	 //Array de arrays de los temas
 		const Temas = [IdesHisTema20,IdesMatTema1,IdesGeoTema3];
@@ -1084,6 +1089,7 @@
 				Sinfo="green";
 				ActualizarInfo(Xinfo,Sinfo);
 				SitioCampo=SitioCampo+1;
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo4.png')";
 				
 				} 
 				//si el balón esta en medio
@@ -1092,6 +1098,7 @@
 				Sinfo="green";
 				ActualizarInfo(Xinfo,Sinfo);
 				SitioCampo=SitioCampo+1;
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo6.png')";
 				
 				}
 				//si el balón esta en zona rival
@@ -1102,6 +1109,7 @@
 				SitioCampo=1;
 				Posedor=1;
 				MarcadorLocal=MarcadorLocal+1;
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo5.png')";
 				}
 			}
 			//si no la tenemos
@@ -1113,6 +1121,7 @@
 				Sinfo="green";
 				ActualizarInfo(Xinfo,Sinfo);
 				Posedor=0;
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo2.png')";
 				
 				} 
 				//si el balón esta en medio
@@ -1120,7 +1129,7 @@
 			Xinfo="Recuperamos un balón en el medio";
 				Sinfo="green";
 				ActualizarInfo(Xinfo,Sinfo);
-				
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo4.png')";
 				Posedor=0;
 				
 				}
@@ -1129,7 +1138,7 @@
 				Xinfo="Recuperamos un balón en su campo";
 				Sinfo="green";
 				ActualizarInfo(Xinfo,Sinfo);
-				
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo6.png')";
 				Posedor=0;
 				}
 			
@@ -1152,6 +1161,7 @@
 				Sinfo="red";
 				ActualizarInfo(Xinfo,Sinfo);
 				Posedor=1;
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo3.png')";
 				
 				} 
 				//si el balón esta en medio
@@ -1160,6 +1170,7 @@
 				Sinfo="red";
 				ActualizarInfo(Xinfo,Sinfo);
 				Posedor=1;
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo5.png')";
 				
 				}
 				//si el balón esta en zona rival
@@ -1168,6 +1179,7 @@
 				Sinfo="red";
 				ActualizarInfo(Xinfo,Sinfo);
 				Posedor=1;
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo7.png')";
 				}
 			}
 			//si no la tenemos
@@ -1175,12 +1187,13 @@
 				
 				//si el balón esta en nuestra zona
 				if(SitioCampo==0){
-				Xinfo="Gol del rival";
+				Xinfo="<img class='iconosasignaturas'src='iconogeografia.png'>Gol del rival";
 				Sinfo="red";
 				ActualizarInfo(Xinfo,Sinfo);
 				Posedor=0;
 				SitioCampo=1;
 				MarcadorRival=MarcadorRival+1;
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo4.png')";
 				
 				} 
 				//si el balón esta en medio
@@ -1189,14 +1202,14 @@
 				Sinfo="red";
 				ActualizarInfo(Xinfo,Sinfo);
 				SitioCampo=0;
-				
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo3.png')";
 				}
 				//si el balón esta en zona rival
 				else if(SitioCampo==2){
 				Xinfo="El rival avanza hasta medio campo";
 				Sinfo="red";
 				ActualizarInfo(Xinfo,Sinfo);
-				
+				document.getElementById("gameplayimagenes").style.backgroundImage = "url('FondoCampo5.png')";
 				SitioCampo=1;
 				}
 			
