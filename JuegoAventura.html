@@ -9,6 +9,10 @@
     <script src='main.js'></script>
 	<link rel="icon" type="image/png" sizes="32x32" href="Titulo3.png">
     <style>
+		:root{
+		--TamañoMivida:0%;
+		--TamañoSuvida:0%;
+		}
         body{
         
            background-image: url("Fondo.png");
@@ -237,9 +241,9 @@
 		.respuestas{
 		background-color:white;
 		color:black;
-		border-radius:35px;
+		border-radius:20px;
 		box-shadow: 1px 10px 15px 2px rgba(0,0,0,0.10);
-		border: 1px solid #D9D9D9;
+		border: 2px solid purple;
 		min-width:110px;
 		height:25px;
 		text-align:center;
@@ -319,11 +323,11 @@
 		}
 		#gameplayrival{
 		-webkit-text-stroke: 1px green;
-		 text-shadow: 0px 5px 5px green;
+		 text-shadow: 0px 1px 2px green;
 		}
 		#gameplaytu{
 		-webkit-text-stroke: 1px red;
-		 text-shadow: 0px 5px 5px red;
+		 text-shadow: 0px 1px 2x red;
 		}
 		#divatrasdetemas{
 		display:flex;
@@ -342,8 +346,9 @@
 			margin-top:-2px;
 			}
 		#Principal{
-			font-size:10px;
+			font-size:11px;
 			color:#4D4D4D;
+			 
 			}
 			#infoarriba1{
 	
@@ -355,6 +360,44 @@
 		 opacity: 0.33;
 		 
 		}
+		.EntreVidayBarra{
+		display:flex;
+		flex-direction:column;
+		
+		}
+		#BarraMivida{
+		width:175px;
+		height:20px;
+		background-color:black;
+		overflow:hidden;
+		}
+		
+		#BarraMivida::after{
+		width:175px;
+		height:20px;
+		content:"";
+		background-color:green;
+		transform: translateX(var(--TamañoMivida));
+		
+		}
+		
+		#BarraSuvida{
+		width:175px;
+		height:20px;
+		background-color:black;
+		overflow:hidden;
+		}
+		
+		#BarraSuvida::after{
+		width:175px;
+		height:20px;
+		content:"";
+		background-color:red;
+		transform: translateX(var(--TamañoSuvida));
+		
+		}
+		
+		
 		@media(max-width:1200px){
 		#gameplayimagenes{
 		height:230px;
@@ -603,6 +646,38 @@
 			font-size:8px;
 			}
 			
+			#BarraMivida{
+		width:80px;
+		height:10px;
+		background-color:black;
+		overflow:hidden;
+		}
+		
+		#BarraMivida::after{
+		width:80px;
+		height:10px;
+		content:"";
+		background-color:green;
+		transform: translateX(var(--TamañoMivida));
+		
+		}
+		
+		#BarraSuvida{
+		width:80px;
+		height:10px;
+		background-color:black;
+		overflow:hidden;
+		}
+		
+		#BarraSuvida::after{
+		width:80px;
+		height:10px;
+		content:"";
+		background-color:red;
+		transform: translateX(var(--TamañoSuvida));
+		
+		}
+			
 		
 		}
 		@media(max-width:350px){
@@ -785,14 +860,19 @@
 	<div id="gameplayPadre">
 		<div id="gameplay">
 			<div id="gameplayvidas">
+				<div class="EntreVidayBarra">
 				<div id="gameplayrival">
-				<h2 id="textovidatu">Mi vida:</h2>
+					<h2 id="textovidatu">Mi vida:</h2>
 					<h2 id="tuvida">100</h2>
-					
 				</div>
+				<div id="BarraMivida"></div>
+				</div>
+				<div class="EntreVidayBarra">
 				<div id="gameplaytu">
 					<h2 id="textovidae">Vida enemigo:</h2>
 					<h2 id="vida">100</h2>
+				</div>
+				<div id="BarraSuvida"></div>
 				</div>
 			</div>
 			<div id="gameplayimagenes">
@@ -991,7 +1071,8 @@
 		fallos=0;
 		aciertos=0;
 		puntosrapidos=0;
-		
+		document.documentElement.style.setProperty("--TamañoSuvida","0%");
+		document.documentElement.style.setProperty("--TamañoMivida","0%");
 		document.getElementById("infoarriba2").innerHTML="---";
 		document.getElementById("infoarriba1").innerHTML="---";
 		document.getElementById("info").innerHTML="Responde las preguntas para derrotar al rival";
@@ -1000,8 +1081,8 @@
 		TemaElegido=numero;
 		document.getElementById("tuimagen").src="./Jugador2_2.png";          
 	document.getElementById("imagenenemigo").src="./Enemigo6.png";       		
-		document.getElementById("vida").innerHTML=Vida;
-        document.getElementById("tuvida").innerHTML=TuVida;
+		document.getElementById("vida").innerHTML=Vida+" /100";
+        document.getElementById("tuvida").innerHTML=TuVida+" /100";
         Info="Acierta las preguntas para hacer daño";
         document.getElementById("info").innerHTML=Info;
         console.log(Vida);
@@ -1051,7 +1132,14 @@
             }else{
                Xinfo="Está bien, Has hecho +10 de daño al rival";
 			   Sinfo="green";
-			ActualizarInfo(Xinfo,Sinfo);
+				ActualizarInfo(Xinfo,Sinfo);
+				ObtenciondeRoot = document.querySelector(':root');
+				DespliegueRootTamañoVida = getComputedStyle(ObtenciondeRoot).getPropertyValue('--TamañoSuvida').trim();
+				console.log(DespliegueRootTamañoVida);
+				QuitarPorcentaje = DespliegueRootTamañoVida.slice(0, -1);
+				QuitarPorcentaje = QuitarPorcentaje-10;
+				DespliegueRootTamañoVida=(QuitarPorcentaje+"%");
+				document.documentElement.style.setProperty("--TamañoSuvida",DespliegueRootTamañoVida);
                 console.log("Está bien, Has hecho +10 de daño al rival");
 				aciertos=aciertos+1;
 				puntosrapidos=puntosrapidos+10;
@@ -1068,7 +1156,18 @@
 			ActualizarInfo(Xinfo,Sinfo);
                 console.log("Está mal");
                 TuVida=TuVida-AtaqueRival;
-                document.getElementById("tuvida").innerHTML=TuVida;
+                document.getElementById("tuvida").innerHTML=TuVida+" /100";
+				//document.documentElement.style.setProperty("--TamañoMivida", "50%");
+				//prueba4= document.documentElement.style.getPropertyValue("--TamañoMivida");
+				ObtenciondeRoot = document.querySelector(':root');
+				DespliegueRootTamañoVida = getComputedStyle(ObtenciondeRoot).getPropertyValue('--TamañoMivida').trim();
+				console.log(DespliegueRootTamañoVida);
+				QuitarPorcentaje = DespliegueRootTamañoVida.slice(0, -1);
+				QuitarPorcentaje = QuitarPorcentaje-10;
+				DespliegueRootTamañoVida=(QuitarPorcentaje+"%");
+				document.documentElement.style.setProperty("--TamañoMivida",DespliegueRootTamañoVida);
+				
+				
 				if(TuVida<=0){
 				document.getElementById("Fallos").innerHTML="<p>Fallos: "+ fallos +"</p>";
 			document.getElementById("Aciertos").innerHTML="<p>Aciertos: "+ aciertos +"</p>";
@@ -1135,7 +1234,7 @@
             //document.getElementById("Principal").innerHTML="<h1>"+ GuardarId[0] +"</h1>";
             
             
-            document.getElementById("vida").innerHTML=Vida;
+            document.getElementById("vida").innerHTML=Vida+" /100";
         }
 		
 		
